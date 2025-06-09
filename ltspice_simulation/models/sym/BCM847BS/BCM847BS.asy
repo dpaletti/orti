@@ -1,0 +1,16 @@
+Version 4
+SymbolType BLOCK
+RECTANGLE Normal -15 14 -80 -16
+SYMATTR Prefix X
+SYMATTR SpiceModel BCM847BS
+SYMATTR Value BCM847BS
+SYMATTR Description NPN transistor
+PIN -64 16 TOP 8
+PINATTR PinName E
+PINATTR SpiceOrder 1
+PIN -48 -16 BOTTOM 8
+PINATTR PinName B
+PINATTR SpiceOrder 2
+PIN -32 16 TOP 8
+PINATTR PinName C
+PINATTR SpiceOrder 3

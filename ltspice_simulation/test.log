@@ -1,0 +1,18 @@
+LTspice 24.1.9 for Windows
+Circuit: Z:\home\reverseflux\Nextcloud\org\humidity_sensor\ltspice_simulation\test.net
+Start Time: Sun Jun  8 17:48:58 2025
+Z:\home\reverseflux\Nextcloud\org\humidity_sensor\ltspice_simulation\test.net(6): Sub-circuit name listed twice. This is most likely because the corresponding symbol contains the name in more than one attribute.
+X§U1 N003 N002 N001 BCM847BS BCM847BS
+                            ^^^^^^^^^
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.070 seconds.
+
+Files loaded:
+Z:\home\reverseflux\Nextcloud\org\humidity_sensor\ltspice_simulation\test.net
+Z:\home\reverseflux\Nextcloud\org\humidity_sensor\ltspice_simulation\models\lib\BCM847BS.lib
+
