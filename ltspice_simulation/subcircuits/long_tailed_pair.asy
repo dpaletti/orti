@@ -3,7 +3,7 @@ SymbolType BLOCK
 RECTANGLE Normal 80 62 -79 -65
 TEXT -34 73 Left 0 long tailed pair
 PIN 0 -64 TOP 8
-PINATTR PinName Vcc
+PINATTR PinName Vdd
 PINATTR SpiceOrder 1
 PIN -80 -16 LEFT 8
 PINATTR PinName Vin+
