@@ -5,15 +5,9 @@ TEXT -80 69 Left 0 3-stage differential ring oscillator
 PIN 0 -64 TOP 8
 PINATTR PinName Vdd
 PINATTR SpiceOrder 1
-PIN -80 -16 LEFT 8
-PINATTR PinName Vin+
-PINATTR SpiceOrder 2
-PIN -80 16 LEFT 8
-PINATTR PinName Vin-
-PINATTR SpiceOrder 3
 PIN 80 -16 RIGHT 8
 PINATTR PinName Vout+
-PINATTR SpiceOrder 4
+PINATTR SpiceOrder 2
 PIN 80 16 RIGHT 8
 PINATTR PinName Vout-
-PINATTR SpiceOrder 5
+PINATTR SpiceOrder 3
