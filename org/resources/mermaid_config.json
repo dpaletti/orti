@@ -1,7 +1,9 @@
 {
   "theme": "base",
+  "scale": 2,
+    "htmlLabels": false,
   "themeVariables": {
-    "fontFamily": "Segoe UI, Inter, Helvetica, Arial, sans-serif",
+    "fontFamily": "sans-serif",
     "fontSize": "16px",
 
     "primaryColor": "#E6ECF7",
@@ -19,8 +21,8 @@
   },
   "flowchart": {
     "curve": "linear",
-    "htmlLabels": true,
-    "useMaxWidth": true,
+    "htmlLabels": false,
+    "useMaxWidth": false,
     "nodeSpacing": 50,
     "rankSpacing": 40
   },

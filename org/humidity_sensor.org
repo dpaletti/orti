@@ -204,7 +204,7 @@
 7. *Open Source - Open Hardware* all the way
 ** PCB development
 *** Block diagram
-#+begin_src mermaid :file block_diagram.png :mermaid-config-file "./resources/mermaid_config.json"
+#+begin_src mermaid :file block_diagram.svg :mermaid-config-file "./resources/mermaid_config.json"
 graph TD
 BATTERY["2 x AAA BATTERY"]
 USB-C
@@ -227,21 +227,21 @@ subgraph HUMIDITY["SOIL PERMITTIVITY"]
          MEASURED_FREQUENCY["BASELINE FREQUENCY INFLUENCED BY SOIL PERMITTIVITY"]
          OSCILLATOR --> |drives| LINE
          LINE --> |produces| MEASURED_FREQUENCY
-         LINE --> |feeds back| OSCILLATOR
-         MEASURED_FREQUENCY --> |goes through| DIVIDER["FREQUENCY DIVIDER"]
+         LINE --> |feedbacks| OSCILLATOR
+         MEASURED_FREQUENCY --> DIVIDER["FREQUENCY DIVIDER"]
 end
 
-USB-C --> |feeds 5V| VOLTAGE-REGULATOR
-VOLTAGE-REGULATOR --> |recharges at 1.5V| BATTERY
+USB-C --> |feeds| VOLTAGE-REGULATOR
+VOLTAGE-REGULATOR --> |recharges| BATTERY
 BATTERY -->|powers| MICROCONTROLLER
 BATTERY -->|powers| HUMIDITY
 BATTERY -->|powers| TEMPERATURE
 
-TEMPERATURE -->|sends signal| MICROCONTROLLER
-HUMIDITY -->|sends signal| MICROCONTROLLER
+TEMPERATURE -->|signals| MICROCONTROLLER
+HUMIDITY -->|signals| MICROCONTROLLER
 #+end_src
 #+RESULTS:
-[[file:block_diagram.png]]
+[[file:block_diagram.svg]]
 
 *** Soil moisture sensor (soil permittivity)
 *Main idea*: use a differential ring oscillator and the two lines are parallel transmission lines (as in the SMT) forming some sort of capacitor with the soil. Transmission time is influenced by moisture and differential amplifier rejects temperature noise (which affects both lines).
