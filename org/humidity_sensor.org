@@ -204,7 +204,7 @@
 7. *Open Source - Open Hardware* all the way
 ** PCB development
 *** Block diagram
-#+begin_src mermaid :file block_diagram.svg :mermaid-config-file "./resources/mermaid_config.json"
+#+begin_src mermaid :file ./diagrams/block_diagram.png :mermaid-config-file "./diagrams/mermaid_config.json"
 graph TD
 BATTERY["2 x AAA BATTERY"]
 USB-C
@@ -241,9 +241,9 @@ TEMPERATURE -->|signals| MICROCONTROLLER
 HUMIDITY -->|signals| MICROCONTROLLER
 #+end_src
 #+RESULTS:
-[[file:block_diagram.svg]]
+[[file:./diagrams/block_diagram.png]]
 
-*** Soil moisture sensor (soil permittivity)
+*** Soil moisture/permittivity sensor
 *Main idea*: use a differential ring oscillator and the two lines are parallel transmission lines (as in the SMT) forming some sort of capacitor with the soil. Transmission time is influenced by moisture and differential amplifier rejects temperature noise (which affects both lines).
 
 We are *heavily inspired by the SMT-100* "low-cost" sensor. We use the same mechanism as explained in the preliminary paper. We include the temperature sensor as in the production SMT-100. In the working principle section they explain how everything works.
