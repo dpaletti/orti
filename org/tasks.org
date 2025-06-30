@@ -1,6 +1,6 @@
 #+title: Tasks
 
-* TODO PCB development [1/3]
+* PROJ PCB development [1/3]
 ** DONE Schematic development [1/1]
 *** DONE Define the design of the ring oscillator
 Read this [[https://analogcircuitdesign.com/ring-oscillator/][article]] and understand the final design of the oscillator, it should not be VCO, the frequency must change.
@@ -9,12 +9,12 @@ Read this [[https://www.seas.ucla.edu/brweb/papers/Journals/BR_SSCM_4_2019.pdf][
 The idea is that you use the two lines going through the soil that form some sort of a capacitor between them and the soil.
 At that point you have a capacitor whose transmission speed influences oscillator frequency and thus by measuring one of the two outputs you can convert it to soil moisture. The differential setup removes temperature and power common-mode noise so that the measurement can be more accurate.
 
-** TODO Simulation [1/4]
+** TODO Simulation [1/4] :pcb_sim:
 **** DONE Identify stages gain
 **** STRT Find parameter values range with ideal current source
 **** STRT Model current with current mirror
 **** TODO Model voltage with battery and USB-C+Voltage regulator
-** PROJ Kicad implementation [0/1]
+** TODO Kicad implementation [0/1] :kicad:
 [[https://www.build-electronic-circuits.com/kicad-tutorial/][kicad tutorial]]
 Move the simulated circuit to kicad
 **** IDEA Copper pours
@@ -49,7 +49,7 @@ https://lcamtuf.substack.com/p/electronics-curriculum
 CLOSED: [2025-06-28 sab 11:30]
 start from a closer look at the singularity from the second part of filtering
 
-** PROJ The Art of PCB Design [1/3]
+** TODO The Art of PCB Design [1/3] :pcb_design:
 *** DONE Component selection guide
 *** HOLD Lessons [2/3]
 **** DONE Lesson 1
