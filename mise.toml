@@ -17,11 +17,16 @@ vale = "3.12.0"
 # Precommit hooks
 "pipx:pre-commit" = "latest"
 
-# Markdown preview
+# Markdown utilities
+## linting
+"npm:markdownlint-cli2" = "0.18.1"
+## previewing
 "pipx:grip" = "latest"
 
-# Markdown structure linting
-"npm:markdownlint-cli2" = "0.18.1"
+
+# Formatting
+"npm:prettier" = "3.6.2"
+
 
 # Diagrams
 "npm:@mermaid-js/mermaid-cli" = "11.6.0"
