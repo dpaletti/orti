@@ -3,7 +3,9 @@
 UTC_DAY_BEGIN = "{{ now() | date(format='%Y-%m-%dT00:00:00+0000', timezone='UTC') }}"
 GIT_COMMITTER_DATE = "{{ env.UTC_DAY_BEGIN }}"
 GIT_AUTHOR_DATE = "{{ env.UTC_DAY_BEGIN }}"
-VALE_CONFIG_PATH = "{{config_root}}/.config/vale/vale.ini"
+
+# Move vale (prose linter) config to a .config directory
+VALE_CONFIG_PATH = "{{config_root}}/.vale/vale.ini"
 
 [tools]
 node = "24"
@@ -22,12 +24,14 @@ vale = "3.12.0"
 ## previewing
 "pipx:grip" = "latest"
 
-
 # Formatting
 "npm:prettier" = "3.6.2"
 
 # Diagrams
 "npm:@mermaid-js/mermaid-cli" = "11.6.0"
+
+[tasks.prettier]
+run = "prettier --find-config-path --config .config/.prettierrc.json"
 
 [tasks.setup]
 description = "Setup development environment"
@@ -40,7 +44,7 @@ echo "Development environment ready!"
 """
 
 [tasks.md_lint_format]
-description = "Run linting and formatting all markdown files."
+description = "Run linting and formatting all markdown files. (precommit-hook)"
 # Some tools may not respect .gitignore correctly
 # We implement the expansion ourselves to be consistent
 run = """
