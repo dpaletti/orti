@@ -1,9 +1,8 @@
 [env]
 # Remove time from commits, keep only date
-_.source = "./.config/computed_env_vars.sh"
-GIT_COMMITTER_DATE="{{env.UTC_DAY_BEGIN}}"
-GIT_AUTHOR_DATE="{{env.UTC_DAY_BEGIN}}"
-
+UTC_DAY_BEGIN = "{{ now() | date(format='%Y-%m-%dT00:00:00+0000', timezone='UTC') }}"
+GIT_COMMITTER_DATE = "{{ env.UTC_DAY_BEGIN }}"
+GIT_AUTHOR_DATE = "{{ env.UTC_DAY_BEGIN }}"
 VALE_CONFIG_PATH = "{{config_root}}/.config/vale/vale.ini"
 
 [tools]
@@ -42,6 +41,8 @@ echo "Development environment ready!"
 
 [tasks.md_lint_format]
 description = "Run linting and formatting all markdown files."
+# Some tools may not respect .gitignore correctly
+# We implement the expansion ourselves to be consistent
 run = """
 not_ignored_md_files="$( ( git status --short| grep '^?' | cut -d\\  -f2- && git ls-files ) | sort -u | grep -E '\\.(md|markdown|mdown)$')"
 echo "Files to consider: "
