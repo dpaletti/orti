@@ -27,7 +27,6 @@ vale = "3.12.0"
 # Formatting
 "npm:prettier" = "3.6.2"
 
-
 # Diagrams
 "npm:@mermaid-js/mermaid-cli" = "11.6.0"
 
@@ -41,12 +40,18 @@ vale sync
 echo "Development environment ready!"
 """
 
-[tasks.md_lint]
-description = "Run linting on all markdown files."
+[tasks.md_lint_format]
+description = "Run linting and formatting all markdown files."
 run = """
-echo "Running markdown linting"
-vale '**/*.md'
-markdownlint-cli2 '**/*.md'
+not_ignored_md_files="$( ( git status --short| grep '^?' | cut -d\\  -f2- && git ls-files ) | sort -u | grep -E '\\.(md|markdown|mdown)$')"
+echo "Files to consider: "
+echo $not_ignored_md_files
+echo "Formatting..."
+(echo $not_ignored_md_files) | xargs prettier -w
+echo "Linting markdown file structure..."
+(echo $not_ignored_md_files) | xargs markdownlint-cli2
+echo "Linting markdown file content..."
+(echo $not_ignored_md_files) | xargs vale
 """
 
 [tasks.precommit]

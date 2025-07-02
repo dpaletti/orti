@@ -1,8 +1,9 @@
 repos:
   - repo: local
     hooks:
-      - id: md_lint
-        name: md_lint
-        entry: mise run md_lint
+      - id: md_lint_format
+        name: md_lint_format
+        description: run formatting and linting on markdown files
+        entry: mise run md_lint_format
         language: system
         pass_filenames: false
