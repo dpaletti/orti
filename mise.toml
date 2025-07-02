@@ -1,15 +1,17 @@
 [env]
 # Remove time from commits, keep only date
-_.source = "./computed_env_vars.sh"
+_.source = "./.config/computed_env_vars.sh"
 GIT_COMMITTER_DATE="{{env.UTC_DAY_BEGIN}}"
 GIT_AUTHOR_DATE="{{env.UTC_DAY_BEGIN}}"
 
-VALE_CONFIG_PATH = "{{config_root}}/.vale.ini"
+VALE_CONFIG_PATH = "{{config_root}}/.config/vale/vale.ini"
 
 [tools]
 node = "24"
 python = "3.13"
 pandoc = "3.6.1"
+
+# Prose linting
 vale = "3.12.0"
 
 # Precommit hooks
@@ -18,8 +20,8 @@ vale = "3.12.0"
 # Markdown preview
 "pipx:grip" = "latest"
 
-# Markdown linting
-"npm:markdownlint" = "0.38.0"
+# Markdown structure linting
+"npm:markdownlint-cli2" = "0.18.1"
 
 # Diagrams
 "npm:@mermaid-js/mermaid-cli" = "11.6.0"
@@ -35,11 +37,11 @@ echo "Development environment ready!"
 """
 
 [tasks.md_lint]
-description = "Run texlint and markdownlint on all text files."
+description = "Run linting on all markdown files."
 run = """
 echo "Running markdown linting"
 vale '**/*.md'
-mdl '**/*.md'
+markdownlint-cli2 '**/*.md'
 """
 
 [tasks.precommit]
