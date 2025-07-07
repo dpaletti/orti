@@ -1,9 +1,6 @@
 #+title: Tasks
 
 
-* PROJ README
-** TODO finish README
-
 * PROJ PCB development [1/3]
 ** DONE Schematic development [1/1]
 *** DONE Define the design of the ring oscillator
@@ -23,6 +20,16 @@ At that point you have a capacitor whose transmission speed influences oscillato
 Move the simulated circuit to kicad
 **** IDEA Copper pours
 Evaluate using copper pours and the like (look for more info on it) to avoid creating a 4 layer PCB with 2 layers one for ground and one for supply. Try and create *2-layer PCB* which costs as much as a 1-layer PCB
+* PROJ README [0/2]
+** TODO Finish the tables comparing products
+** TODO Finish the 'How' section with business model information
+* PROJ Business model development [0/2]
+** TODO Study the OSH business model doctoral theses
+[[https://theses.hal.science/tel-02504769v1][source]]
+** TODO Study the Open!Next project
+[[https://opennext.eu/][source]]
+
+
 * PROJ Electronics and PCB design study [1/2]
 ** DONE Electronics [4/4]
 CLOSED: [2025-06-28 sab 13:28]
