@@ -320,99 +320,6 @@ The idea here is having a pcb design such that when you insert the soil permitti
 
 * Production
 * Resources
-*** The Art of PCB Design [Arrived at section 3 in lesson 1]
-[[https://pcb.mit.edu/archive/IAP2024/][course link]]
-[[https://nostarch.com/designingelectronics][a good book on industrializing electronic products]]
-
-Throughout the course they use the ESP32 SoC as it has Wi-Fi in my case wi-fi is not needed thus I will be using the NRf-52840.
-**** Lesson 1: build a block-diagram and find reference circuits
-Done, find it in [[High-level Product design]].
-**** Lab 1: Kicad crash course
-TODO: selezionare il resistor
-1. Once you create a project you add parts from the left
-2. The parts you add do not have neither the datasheet nor the footprint nor the actual part number:
-   - you use some general parts and add name and datasheet of what you want
-   - for the footprints, that is the actual space the parts occupies, there are several websites:
-     - Digikey (under “EDA/CAD Models”)
-     - snapEDA
-     - Octopart (under “CAD Models”)
-     - Ultra Librarian
-   - for the specifics you add two fields:
-     - manufacturing number
-     - digikey part number (or any other vendor), in particular from digikey you want the *cut-tape* part number
-3. The .kicad_mod is the footprint and the .kicad_sym is the whole part
-4. Resistor dimensioning:
-   - V_in: 6V  (when using two AA batteries)
-   - V_drop: 1.7-2.6V (needs to be in the specified led range)
-   - I_fw: 20ma (needs to be in the specified led range)
-     - $R_{limit} = \frac{V_{in} - V_{drop}}{I_{fw}}$ = 4.3 (taking 1.7)/(20 * 10^-3) = 4000/20 = 215 Ohm, in the class they have taken an 1/2W 340 Ohm, 50V resistor from Vishay because also the power (P=V*I) is important and easy to calculate when  you know the voltage across and the passing current, they assumed a $V_in = 12V$ and the led ha 30ma of current forward. The 340 ohm one works, in particular I found this https://www.digikey.it/en/products/detail/vishay-dale/CMF55340R00FHEB/1553961 which is in stock.
-   -
-[[https://pcb.mit.edu/archive/IAP2024/labs/lab_01/][kicad crash course]]
-***** Hierarchical designs
-[[https://docs.kicad.org/9.0/en/eeschema/eeschema.html#hierarchical-schematics][kicad docs]]
-
-**** Lesson 2: circuit design
-[[https://pcb.mit.edu/archive/IAP2024/lectures/lecture_02/][practical circuit design]]
-***** Parasitics in components
-A parasitic is something we do not want, different components have different tradeoffs
-****** Capacitors
-*Equivalent Series Resistance*: a resistance in series with the capacitor
-*Equivalent Sereis Inductance*: a capacitor at high frequencies starts to work as an inductor
-The impedance plot shows how the impedance of a capacitor works at high frequencies and how non-idealities are important when working with real components.
-
-*Take a capacitor that works as a a capacitor and not an inductor at the frequency it will be working at*
-[[./resources/real_capacitor.png]]
-******* Electrolytic capacitors
-*bulk capacitors*: used as a quick and low-impedance energy source
-******* Ceramic capacitors (multilayer ceramic capcitor)
-*bypass capacitors*: ICs need less but much faster bursts of current
-
-Their operating range is in the MHz regime so they are very useful for bypassing when *put very near to the IC being bypassed* to further lower the ESR/ESL. They must be put *near every single IC*.
-****** Inductors
-Similar to the capacitor, also in this case we have a capacitor and a resistor in sequence.
-[[./resources/real_inductor.png]]
-****** Resistors
-Resistors *heat up*, P=I^2R and *change resistance with temperature*. Always check the datasheet.
-***** Practical Circuit Design
-****** Pull up resistor
-*pull-up resistor*: a resistor in the kOhm range that when the switch is open pulls the state to high so that when we close the switch the state becomes low and the microcontroller may do some work triggered by this change
-[[./resources/pull_up_resistor.png]]
-Obviously one can do the opposite too.
-****** Delay circuits
-Low-pass filter's step response delays when the voltage rises. To get a time delay of around 300ms we could use a 300k/1uF low-pass filter as a start since that has a time constant of 300K*1uF=0.3s.
-If we were doing it on a IC with a built-in 800kohm pull down resistor we would have a circuit in which the resistance must be adjusted to 1M Ohm.
-[[./resources/time_delay.png]]
-****** Capacitive loads
-A bypass capacitor is very useful to protect IC from steps in voltage when the device turns on.
-*Problem*: when we turn on the device the step response creates a inrush current that is very large and overtime deteriorates the capacitor
-[[./resources/step_response.png]]
-******* The slew rate controlled switch
-[[./resources/slew_rate_switch.png]]
-
-The idea here is that a P-channel mosfet has a Resistance between drain and source (when it is ON, $R_{DS_{ON}}$) that goes from infinite to almost 0 as $V_{GS}$ is being increased.
-
-*Idea*: put a P-channle MOSFET in series with the voltage step and slowly increase $V_{GS}$ to slowly charge up the capacitor. As the MOSFET turns on more the resistance decreases to almost 0 removing steady state loss
-
-When the voltage turns on the capacitor will be charged as $C_1/R_2$ this forms a low-pass filter so the gate voltage will slowly be ramped.
-The diode is a zener diode that clamps the gate-source voltage to 12V so not to burn the MOSFET that may not withstand 20V
-This way the current flowing in the capacitor is 4A.
-*This may not always be needed* as it greatly increases complexity.
-****** The NTC Thermristor
-Not only MOSFET can vary their resistance but also thermistors, its resistance decreases as the temperature increases.
-
-*This may be a easier mechanism to limitate inrush current but does not work for quick plug/unplug*
-
-Many AC/DC power supplies use this.
-******  Inductive Loads
-
-**** Component selection guide
-:PROPERTIES:
-:ID:       337ae784-4342-487f-9ad3-c7a4c3453963
-:END:
-[[https://pcb.mit.edu/archive/IAP2024/lectures/ComponentSelection/][guide]]
-
-**** Lab 2 (2025)
-[[https://pcb.mit.edu/labs/lab_02/][spice lab]]
 *** Electronics
 [[./resources/the_art_of_electronics.pdf][the art of electronics (book)]]
 [[https://www.build-electronic-circuits.com/][build electronic circuits]]
@@ -1749,7 +1656,114 @@ when you signal travel time is short in proportion to the rate of change the ref
 1. usually the culprit is a low-impedance source driving a comparatively high-impedance load (e.g. MOSFET)
 2. add a 'sink' resistor on the receiving end, connected to the signal's return path. Pair this with a series resistor on the driving side to limit peak current a to match the characterisitc impedance of the trace
 
-*** LTSPice guide
+*** PCB Design
+- [[https://pcb.mit.edu/archive/IAP2023/lectures/][Art & Science of PCB design (MIT course)]]
+- [[https://alternatezone.com/electronics/files/PCBDesignTutorialRevA.pdf][PCB Design tutorial (most popular)]]
+- The Art of electronics: best book (very reference like)
+- forums:
+  - https://www.electro-tech-online.com/
+  - https://www.allaboutcircuits.com/
+  - https://www.edaboard.com/
+- KiCAD documentation
+- Multi-part tutorial on soldering:
+  - https://www.youtube.com/watch?v=J5Sb21qbpEQ
+  - https://www.youtube.com/watch?v=fYz5nIHH0iY
+  - https://www.youtube.com/watch?v=b9FC9fAlfQE
+- design nrg 52840 with Rust https://github.com/nrf-rs/nrf-hal/tree/master?tab=readme-ov-file
+**** The Art of PCB Design [Arrived at section 3 in lesson 1]
+[[https://pcb.mit.edu/archive/IAP2024/][course link]]
+[[https://nostarch.com/designingelectronics][a good book on industrializing electronic products]]
+
+Throughout the course they use the ESP32 SoC as it has Wi-Fi in my case wi-fi is not needed thus I will be using the NRf-52840.
+***** Lesson 1: build a block-diagram and find reference circuits
+Done, find it in [[High-level Product design]].
+***** Lab 1: Kicad crash course
+TODO: selezionare il resistor
+1. Once you create a project you add parts from the left
+2. The parts you add do not have neither the datasheet nor the footprint nor the actual part number:
+   - you use some general parts and add name and datasheet of what you want
+   - for the footprints, that is the actual space the parts occupies, there are several websites:
+     - Digikey (under “EDA/CAD Models”)
+     - snapEDA
+     - Octopart (under “CAD Models”)
+     - Ultra Librarian
+   - for the specifics you add two fields:
+     - manufacturing number
+     - digikey part number (or any other vendor), in particular from digikey you want the *cut-tape* part number
+3. The .kicad_mod is the footprint and the .kicad_sym is the whole part
+4. Resistor dimensioning:
+   - V_in: 6V  (when using two AA batteries)
+   - V_drop: 1.7-2.6V (needs to be in the specified led range)
+   - I_fw: 20ma (needs to be in the specified led range)
+     - $R_{limit} = \frac{V_{in} - V_{drop}}{I_{fw}}$ = 4.3 (taking 1.7)/(20 * 10^-3) = 4000/20 = 215 Ohm, in the class they have taken an 1/2W 340 Ohm, 50V resistor from Vishay because also the power (P=V*I) is important and easy to calculate when  you know the voltage across and the passing current, they assumed a $V_in = 12V$ and the led ha 30ma of current forward. The 340 ohm one works, in particular I found this https://www.digikey.it/en/products/detail/vishay-dale/CMF55340R00FHEB/1553961 which is in stock.
+   -
+[[https://pcb.mit.edu/archive/IAP2024/labs/lab_01/][kicad crash course]]
+****** Hierarchical designs
+[[https://docs.kicad.org/9.0/en/eeschema/eeschema.html#hierarchical-schematics][kicad docs]]
+
+***** Lesson 2: circuit design
+[[https://pcb.mit.edu/archive/IAP2024/lectures/lecture_02/][practical circuit design]]
+****** Parasitics in components
+A parasitic is something we do not want, different components have different tradeoffs
+******* Capacitors
+*Equivalent Series Resistance*: a resistance in series with the capacitor
+*Equivalent Sereis Inductance*: a capacitor at high frequencies starts to work as an inductor
+The impedance plot shows how the impedance of a capacitor works at high frequencies and how non-idealities are important when working with real components.
+
+*Take a capacitor that works as a a capacitor and not an inductor at the frequency it will be working at*
+[[./resources/real_capacitor.png]]
+******** Electrolytic capacitors
+*bulk capacitors*: used as a quick and low-impedance energy source
+******** Ceramic capacitors (multilayer ceramic capcitor)
+*bypass capacitors*: ICs need less but much faster bursts of current
+
+Their operating range is in the MHz regime so they are very useful for bypassing when *put very near to the IC being bypassed* to further lower the ESR/ESL. They must be put *near every single IC*.
+******* Inductors
+Similar to the capacitor, also in this case we have a capacitor and a resistor in sequence.
+[[./resources/real_inductor.png]]
+******* Resistors
+Resistors *heat up*, P=I^2R and *change resistance with temperature*. Always check the datasheet.
+****** Practical Circuit Design
+******* Pull up resistor
+*pull-up resistor*: a resistor in the kOhm range that when the switch is open pulls the state to high so that when we close the switch the state becomes low and the microcontroller may do some work triggered by this change
+[[./resources/pull_up_resistor.png]]
+Obviously one can do the opposite too.
+******* Delay circuits
+Low-pass filter's step response delays when the voltage rises. To get a time delay of around 300ms we could use a 300k/1uF low-pass filter as a start since that has a time constant of 300K*1uF=0.3s.
+If we were doing it on a IC with a built-in 800kohm pull down resistor we would have a circuit in which the resistance must be adjusted to 1M Ohm.
+[[./resources/time_delay.png]]
+******* Capacitive loads
+A bypass capacitor is very useful to protect IC from steps in voltage when the device turns on.
+*Problem*: when we turn on the device the step response creates a inrush current that is very large and overtime deteriorates the capacitor
+[[./resources/step_response.png]]
+******** The slew rate controlled switch
+[[./resources/slew_rate_switch.png]]
+
+The idea here is that a P-channel mosfet has a Resistance between drain and source (when it is ON, $R_{DS_{ON}}$) that goes from infinite to almost 0 as $V_{GS}$ is being increased.
+
+*Idea*: put a P-channle MOSFET in series with the voltage step and slowly increase $V_{GS}$ to slowly charge up the capacitor. As the MOSFET turns on more the resistance decreases to almost 0 removing steady state loss
+
+When the voltage turns on the capacitor will be charged as $C_1/R_2$ this forms a low-pass filter so the gate voltage will slowly be ramped.
+The diode is a zener diode that clamps the gate-source voltage to 12V so not to burn the MOSFET that may not withstand 20V
+This way the current flowing in the capacitor is 4A.
+*This may not always be needed* as it greatly increases complexity.
+******* The NTC Thermristor
+Not only MOSFET can vary their resistance but also thermistors, its resistance decreases as the temperature increases.
+
+*This may be a easier mechanism to limitate inrush current but does not work for quick plug/unplug*
+
+Many AC/DC power supplies use this.
+*******  Inductive Loads
+
+***** Component selection guide
+:PROPERTIES:
+:ID:       337ae784-4342-487f-9ad3-c7a4c3453963
+:END:
+[[https://pcb.mit.edu/archive/IAP2024/lectures/ComponentSelection/][guide]]
+
+***** Lab 2 (2025)
+[[https://pcb.mit.edu/labs/lab_02/][spice lab]]
+**** LTSPice guide
 [[./resources/LTSpiceIntro.pdf][source]]
 *Net labels*: use them to label most of the important stuff
 
@@ -1780,24 +1794,22 @@ Voltage sources have an advanced menu to define signals of different shapes.
 For example we may add a model to describe PFET chracteristics and we would find a new component.
 
 *better color palette*: in tools -> control panel and color preferences one can make the tool a bit better
-**** Parameters
+***** Parameters
 [[./resources/ltspice_params.png]]
 This kind of thing allows to test against different inputs
+*** Business model design
+*Open-Next* the most up to date resource on open source hardware business models: https://opennext.eu/
 
-*** PCB Design
-- [[https://pcb.mit.edu/archive/IAP2023/lectures/][Art & Science of PCB design (MIT course)]]
-- [[https://alternatezone.com/electronics/files/PCBDesignTutorialRevA.pdf][PCB Design tutorial (most popular)]]
-- The Art of electronics: best book (very reference like)
-- forums:
-  - https://www.electro-tech-online.com/
-  - https://www.allaboutcircuits.com/
-  - https://www.edaboard.com/
-- KiCAD documentation
-- Multi-part tutorial on soldering:
-  - https://www.youtube.com/watch?v=J5Sb21qbpEQ
-  - https://www.youtube.com/watch?v=fYz5nIHH0iY
-  - https://www.youtube.com/watch?v=b9FC9fAlfQE
-- design nrg 52840 with Rust https://github.com/nrf-rs/nrf-hal/tree/master?tab=readme-ov-file
+Doctoral thesis on *open source hardware business models*:
+https://theses.hal.science/tel-02504769v1
+
+*Remodel* a toolkit for business model development:
+    - remodel (business model toolkit for ohw):
+    https://web.archive.org/web/20250130031505/https://www.remodel.dk/
+
+    - Corso REMODEL: https://medium.com/@villum/the-remodel-toolkit-is-now-online-e7deb155743
+
+
 * Misc Ideas
 - *multi-depth measurement*: the [[https://www.mdpi.com/sensors/sensors-23-06581/article_deploy/html/images/sensors-23-06581-g001.png][smt-500]] has coils at different depths so to take different measurements at different depths
 - *Plant disease detection*: understand in what way you can monitor fungi, infection and parasites before they become hard to solve
