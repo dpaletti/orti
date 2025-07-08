@@ -1,51 +1,71 @@
 # Soil moisture sensor
 
 **What**: a cheap, accurate, open, interoperable, and beautiful soil moisture
-sensor (see [What's inside?](What's inside?) for more details).
+sensor
 
-**Why**: other solutions miss at least one of the above features --> [Why
-another one?](Why another one?))
+**Why**: other solutions miss at least one of the above features
 
-**When**: don't know, a lot of stuff to get through --> [When can I have
-one](When can I have one?))
+**When**: no release date yet, a lot of stuff to get through
 
 **How**: open-hardware and open-source all the way, working with the garage door
-open --> [How does this make sense](How does this make sense?)
+open
+
+⟶ [What's inside?](#whats-inside)
+
+⟶ [Why another one?](#why-another-one)
+
+⟶ [When can I have one?](#when-can-i-have-one)
+
+⟶ [How does this make sense?](#how-does-this-make-sense)
 
 ## What's inside?
 
-- A 20€ (retail price) frequency-domain reflectometry moisture sensor performing
-  in-between research grade and consumer hardware at an affordable price.
-- An open-hardware design with an open-source app running (natively) on IOS and
-  Android devices together with full support for Zigbee, Thread/Matter and Home
-  Automation.
-- A good looking home accessory which looks slick indoor and guarantees water
-  resistance outdoor
+- **accurate and affordable**: a soil moisture sensor performing in-between
+  research grade and consumer hardware at an affordable price (~20€).
+- **open and interconnected**: an open-hardware design with an open-source
+  mobile app running (natively) on IOS and Android devices together with full
+  support for Zigbee, Thread/Matter and Home Automation.
+- **carefully designed**: a good looking home accessory which looks slick indoor
+  and guarantees water resistance outdoor.
 
 ## Why another one
 
+Because existing products do not tick all the boxes.
+
 ### High-Level Comparison
 
-| Product                            | Price (€) | Accuracy | Technology           | Power                                   |
-| ---------------------------------- | --------- | -------- | -------------------- | --------------------------------------- |
-| Consumer sensors (Xiaomi, Ecowitt) | 18-30     | Moderate | Capacitive           | Button/AA batteries                     |
-| Research grade (ECH20, SMT-100)    | 150-200   | High     | HF reflectometry     | Wired                                   |
-| DIY/Maker (B-Parasite, PLT-1)      | DIY/24    | Moderate | Capacitive           | Button/18650                            |
-| **Our solution**                   | **~20**   | **High** | **HF reflectometry** | **2× AAA (rechargeable + replaceable)** |
+| Product                            | Price (€)    | Accuracy | Technology                       | Power supply                            |
+| ---------------------------------- | ------------ | -------- | -------------------------------- | --------------------------------------- |
+| Consumer sensors (Xiaomi, Ecowitt) | 18-30        | moderate | capacitive                       | Button/AA batteries (replaceable)       |
+| Research grade (ECH20, SMT-100)    | 150-200      | highest  | high frequency reflectometry     | Wired                                   |
+| DIY (B-Parasite)                   | DIY          | moderate | capacitive                       | Button (replaceable)                    |
+| Maker (PLT-1)                      | ~20 (+extra) | moderate | capacitive                       | 18650 (rechargeable + replaceable)      |
+| **Our solution**                   | **~20**      | **high** | **high frequency reflectometry** | **2× AAA (rechargeable + replaceable)** |
 
-### Detailed Connectivity & Features
+### Feature comparison
 
-| Product          | Home Assistant | Zigbee | Thread/Matter | Mobile App   | Plant Databases                  | Open Source/Hardware |
-| ---------------- | -------------- | ------ | ------------- | ------------ | -------------------------------- | -------------------- |
-| Xiaomi MI Flora  | ?              | ?      | ?             | Vendor only  | ?                                | ?                    |
-| Ecowitt WH51     | ?              | ?      | ?             | ?            | ?                                | ?                    |
-| ECH20 EC5        | ?              | ?      | ?             | ?            | ?                                | ?                    |
-| SMT-100          | ?              | ?      | ?             | ?            | ?                                | ?                    |
-| B-Parasite       | ?              | ?      | ?             | ?            | ?                                | ?                    |
-| PLT-1            | ?              | ?      | ?             | ?            | ?                                | ?                    |
-| **Our solution** | **?**          | **?**  | **?**         | **? (open)** | **? (OpenPlantBook, PlantaeDB)** | **?**                |
+| Product          | Home Assistant | Zigbee/Thread/Matter | Mobile App | Plant DB integration | Ambient temp/humidity | Soil temperature | Irradiation | Outdoor use | Open  |
+| ---------------- | -------------- | -------------------- | ---------- | -------------------- | --------------------- | ---------------- | ----------- | ----------- | ----- |
+| Xiaomi MI Flora  | ✓              | ✗                    | ✓          | ✓                    | ✓                     | ✗                | ✓           | ✓           | ✗     |
+| Ecowitt WH51     | ✗              | ✗                    | ✓          | ✗                    | ✗                     | ✗                | ✗           | ✓           | ✗     |
+| B-Parasite       | ✓              | ✓                    | ✗          | ✗                    | ✓                     | ✗                | ✓           | ✓           | ✓     |
+| PLT-1            | ✓              | ✗                    | ✗          | ✗                    | ✗                     | ✓                | ✗           | ✗           | ✗     |
+| **Our solution** | **✓**          | **✓**                | **✓**      | **✓**                | **✗**                 | **✓**            | **✗**       | **✓**       | **✓** |
 
-TODO: fix this
+**Why are we missing ambient temperature and humidity sensing?**
+
+Because these measurements pertain other sensors. Take a balcony with many
+plants and many soil moisture sensors, one for each pot. In such case we would
+have a lot of redundant measurements which a single cheap specialized sensor can
+replace easily. Such measurement is easily integrated in a mobile app
+visualization, home integration automation and the like.
+
+**Why are we missing irradiation sensing?**
+
+Because these measurements are rarely reliable and such sensors require
+specialized encasing design. Irradiation is an important measure to assess plant
+health but the tradeoff between sensor usefulness and added system complexity is
+not favorable in this phase.
 
 ## When can I have one?
 
