@@ -21,8 +21,6 @@ vale = "3.12.0"
 # Markdown utilities
 ## linting
 "npm:markdownlint-cli2" = "0.18.1"
-## previewing
-"pipx:grip" = "latest"
 
 # Formatting
 "npm:prettier" = "3.6.2"
