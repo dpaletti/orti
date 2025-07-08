@@ -44,13 +44,13 @@ Because existing products do not tick all the boxes.
 
 ### Feature comparison
 
-| Product          | Home Assistant | Zigbee/Thread/Matter | Mobile App | Plant DB integration | Ambient temp/humidity | Soil temperature | Irradiation | Outdoor use | Open  |
-| ---------------- | -------------- | -------------------- | ---------- | -------------------- | --------------------- | ---------------- | ----------- | ----------- | ----- |
-| Xiaomi MI Flora  | ✓              | ✗                    | ✓          | ✓                    | ✓                     | ✗                | ✓           | ✓           | ✗     |
-| Ecowitt WH51     | ✗              | ✗                    | ✓          | ✗                    | ✗                     | ✗                | ✗           | ✓           | ✗     |
-| B-Parasite       | ✓              | ✓                    | ✗          | ✗                    | ✓                     | ✗                | ✓           | ✓           | ✓     |
-| PLT-1            | ✓              | ✗                    | ✗          | ✗                    | ✗                     | ✓                | ✗           | ✗           | ✗     |
-| **Our solution** | **✓**          | **✓**                | **✓**      | **✓**                | **✗**                 | **✓**            | **✗**       | **✓**       | **✓** |
+| Product          | Home Assistant | Zigbee/Matter | Mobile App | Plant DB integration | Ambient temp/humidity | Soil temperature | Irradiation | Outdoor use | Open  |
+| ---------------- | -------------- | ------------- | ---------- | -------------------- | --------------------- | ---------------- | ----------- | ----------- | ----- |
+| Xiaomi MI Flora  | ✓              | ✗             | ✓          | ✓                    | ✓                     | ✗                | ✓           | ✓           | ✗     |
+| Ecowitt WH51     | ✗              | ✗             | ✓          | ✗                    | ✗                     | ✗                | ✗           | ✓           | ✗     |
+| B-Parasite       | ✓              | ✓             | ✗          | ✗                    | ✓                     | ✗                | ✓           | ✓           | ✓     |
+| PLT-1            | ✓              | ✗             | ✗          | ✗                    | ✗                     | ✓                | ✗           | ✗           | ✗     |
+| **Our solution** | **✓**          | **✓**         | **✓**      | **✓**                | **✗**                 | **✓**            | **✗**       | **✓**       | **✓** |
 
 **Why are we missing ambient temperature and humidity sensing?**
 
