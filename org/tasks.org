@@ -23,7 +23,7 @@ Evaluate using copper pours and the like (look for more info on it) to avoid cre
 * PROJ README [1/1]
 ** DONE Finish the tables comparing products
 CLOSED: [2025-07-10 Thu 16:08]
-* PROJ Business model development [0/3]
+* PROJ Business model development [1/4]
 ** TODO Study the OSH business models
 [[./resources/building_osh_business_models.pdf][2023_publication]]
 [[./resources/business_models_for_osh_phd.pdf][2019 phd thesis]]
@@ -31,7 +31,13 @@ CLOSED: [2025-07-10 Thu 16:08]
 [[https://opennext.eu/][source]]
 ** TODO Finish the README 'How' section with business model information
 
-
+** DONE Redact license
+CLOSED: [2025-07-10 Thu 17:42]
+software (+ software docs) -> GPLv3
+hardware -> CERN-OHL-S (strongly reciprocal means copyleft)
+everything else ->  CC-BY-SA-4.0
+fonts -> SIL Open Font License 1.1
+Understand how to state all the licenses together
 * PROJ Electronics and PCB design study [1/2]
 ** DONE Electronics [4/4]
 CLOSED: [2025-06-28 sab 13:28]
