@@ -83,3 +83,11 @@ A lot of stuff to get through (contributors welcome!):
 ## How does this make sense?
 
 I don't know (yet).
+
+## License
+
+- **Software**: [GPLv3](LICENSE-GPL3)
+- **Hardware**: [CERN-OHL-S-2.0](LICENSE-CERN-OHL-S)
+- **Everything else**: [CC-BY-SA-4.0](LICENSE-CC-BY-SA)
+
+See [LICENSE](LICENSE) for details.
