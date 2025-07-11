@@ -4,7 +4,7 @@
 
 - [x] block diagram
 
-⟶ [completed diagram](hardware/docs/block_diagram)
+⟶ [completed diagram](hardware/docs/block_diagram.png)
 
 ### Simulation
 

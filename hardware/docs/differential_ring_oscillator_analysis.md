@@ -1,8 +1,9 @@
 # Ring oscillator analysis
 
-![3-stage oscillator circuit](./resources/3_stage_differential_ring.png) In this
-document we take into account a 3-stage differential ring oscillator with
-differential pairs as stages.
+![3-stage oscillator circuit](./resources/3_stage_differential_ring.png)
+
+In this document we take into account a 3-stage differential ring oscillator
+with differential pairs as stages.
 
 ## Minimum gain per stage
 

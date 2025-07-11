@@ -80,6 +80,9 @@ A lot of stuff to get through (contributors welcome!):
 - [ ] encasing design
 - [ ] testing with early adopters
 
+For a more detailed view of the past, ongoing and future activities see the
+[task file](TASKS.md).
+
 ## How does this make sense?
 
 I don't know (yet).
