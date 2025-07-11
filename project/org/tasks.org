@@ -23,7 +23,7 @@ Evaluate using copper pours and the like (look for more info on it) to avoid cre
 * PROJ README [1/1]
 ** DONE Finish the tables comparing products
 CLOSED: [2025-07-10 Thu 16:08]
-* PROJ Business model development [1/4]
+* PROJ Business model development [1/5]
 ** TODO Study the OSH business models
 [[./resources/building_osh_business_models.pdf][2023_publication]]
 [[./resources/business_models_for_osh_phd.pdf][2019 phd thesis]]
