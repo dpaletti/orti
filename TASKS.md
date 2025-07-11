@@ -13,6 +13,9 @@
 ⟶ [circuit analysis](hardware/docs/differential_ring_oscillator_analysis.md)
 
 - [ ] get reliable oscillation
+
+⟶ **ongoing in the simulation branch**
+
 - [ ] replace ideal current source
 - [ ] include battery voltage source
 - [ ] include USB-C recharging
