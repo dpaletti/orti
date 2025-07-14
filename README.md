@@ -10,18 +10,18 @@ sensor
 **How**: open-hardware and open-source all the way, working with the garage door
 open
 
-⟶ [What's inside?](#whats-inside)
+? [What's inside?](#whats-inside)
 
-⟶ [Why another one?](#why-another-one)
+? [Why another one?](#why-another-one)
 
-⟶ [When can I have one?](#when-can-i-have-one)
+? [When can I have one?](#when-can-i-have-one)
 
-⟶ [How does this make sense?](#how-does-this-make-sense)
+? [How does this make sense?](#how-does-this-make-sense)
 
 ## What's inside?
 
 - **accurate and affordable**: a soil moisture sensor performing in-between
-  research grade and consumer hardware at an affordable price (~20€).
+  research grade and consumer hardware at an affordable price (~20).
 - **open and interconnected**: an open-hardware design with an open-source
   mobile app running (natively) on IOS and Android devices together with full
   support for Zigbee, Thread/Matter and Home Automation.
@@ -34,7 +34,7 @@ Because existing products do not tick all the boxes.
 
 ### High-Level Comparison
 
-| Product                            | Price (€)    | Accuracy | Technology                       | Power supply                            |
+| Product                            | Price ()     | Accuracy | Technology                       | Power supply                            |
 | ---------------------------------- | ------------ | -------- | -------------------------------- | --------------------------------------- |
 | Consumer sensors (Xiaomi, Ecowitt) | 18-30        | moderate | capacitive                       | Button/AA batteries (replaceable)       |
 | Research grade (ECH20, SMT-100)    | 150-200      | highest  | high frequency reflectometry     | Wired                                   |
@@ -46,11 +46,11 @@ Because existing products do not tick all the boxes.
 
 | Product          | Home Assistant | Zigbee/Matter | Mobile App | Plant DB integration | Ambient temp/humidity | Soil temperature | Irradiation | Outdoor use | Open  |
 | ---------------- | -------------- | ------------- | ---------- | -------------------- | --------------------- | ---------------- | ----------- | ----------- | ----- |
-| Xiaomi MI Flora  | ✓              | ✗             | ✓          | ✓                    | ✓                     | ✗                | ✓           | ✓           | ✗     |
-| Ecowitt WH51     | ✗              | ✗             | ✓          | ✗                    | ✗                     | ✗                | ✗           | ✓           | ✗     |
-| B-Parasite       | ✓              | ✓             | ✗          | ✗                    | ✓                     | ✗                | ✓           | ✓           | ✓     |
-| PLT-1            | ✓              | ✗             | ✗          | ✗                    | ✗                     | ✓                | ✗           | ✗           | ✗     |
-| **Our solution** | **✓**          | **✓**         | **✓**      | **✓**                | **✗**                 | **✓**            | **✗**       | **✓**       | **✓** |
+| Xiaomi MI Flora  | ?              | ?             | ?          | ?                    | ?                     | ?                | ?           | ?           | ?     |
+| Ecowitt WH51     | ?              | ?             | ?          | ?                    | ?                     | ?                | ?           | ?           | ?     |
+| B-Parasite       | ?              | ?             | ?          | ?                    | ?                     | ?                | ?           | ?           | ?     |
+| PLT-1            | ?              | ?             | ?          | ?                    | ?                     | ?                | ?           | ?           | ?     |
+| **Our solution** | **?**          | **?**         | **?**      | **?**                | **?**                 | **?**            | **?**       | **?**       | **?** |
 
 **Why are we missing ambient temperature and humidity sensing?**
 
@@ -85,7 +85,29 @@ For a more detailed view of past, ongoing and future activities see
 
 ## How does this make sense?
 
-I don't know (yet).
+A product is protected through innovation and branding, not obscurity. Lowering
+the barrier of entry for competitors is a low price to pay for a community that
+constantly regenerates the product through open collaboration.
+
+**How is this economically viable?**
+
+> Sell the product at the right price point with the right feature set through
+> the right suppliers and distributors. Add coherent branding and you are set.
+> Not easy but nothing changes from a traditional business.
+
+**How do you get recurring revenues?**
+
+> Professional farmers, leverage the experience and credibility built in the
+> consumer market to develop products for precision agriculture.
+
+**How do you structure an entity stewarding such a product?**
+
+> A worker cooperative with open and democratic governance that:
+>
+> - contributes to design and development in the open
+> - coordinates community contributions democratically
+> - sells finished products and adjacent services transparently, without
+>   resorting to closed source development
 
 ## License
 
