@@ -85,7 +85,45 @@ For a more detailed view of past, ongoing and future activities see
 
 ## How does this make sense?
 
-I don't know (yet).
+A product is protected through innovation and branding, not obscurity. Lowering
+the barrier of entry for competitors is a low price to pay for a community that
+constantly regenerates the product through open collaboration.
+
+**How is this economically viable?**
+
+> Sell the product at the right price point with the right feature set through
+> the right suppliers and distributors. Add coherent branding and you are set.
+> Definitely not easy but nothing changes from a traditional business.
+
+**How do you prevent other businesses from reselling your product?**
+
+> You don't. Easier replication means that branding and marketing become
+> crucial, which is already the case for most businesses. Every product can
+> already be reverse engineered and replicated, lowering the replication barrier
+> in exchange for community engagement is a net positive.
+
+**How do you get recurring revenues?**
+
+> Professional farmers. Leverage the experience and credibility built in the
+> consumer market to develop products for precision agriculture.
+
+**How do you structure an organization stewarding this vision?**
+
+> A worker cooperative with open and democratic governance that:
+>
+> - contributes to design and development in the open
+> - coordinates community contributions democratically
+> - sells finished products and adjacent services transparently, without
+>   resorting to closed source development.
+
+**How do you finance all this?**
+
+> Bootstrapping, make the business profitable as soon as possible and grow
+> organically. We are in for the long run.
+
+As you may have noticed, **I am pitching directly to you**. No notion of
+external investors or venture capital, only contributors reaping the benefits of
+each other's work.
 
 ## License
 
