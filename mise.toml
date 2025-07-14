@@ -1,0 +1,65 @@
+[env]
+# Remove time from commits, keep only date
+UTC_DAY_BEGIN = "{{ now() | date(format='%Y-%m-%dT00:00:00+0000', timezone='UTC') }}"
+GIT_COMMITTER_DATE = "{{ env.UTC_DAY_BEGIN }}"
+GIT_AUTHOR_DATE = "{{ env.UTC_DAY_BEGIN }}"
+
+# Move vale (prose linter) config to a .config directory
+VALE_CONFIG_PATH = "{{config_root}}/.vale/vale.ini"
+
+[tools]
+node = "24"
+python = "3.13"
+pandoc = "3.6.1"
+
+# Prose linting
+vale = "3.12.0"
+
+# Precommit hooks
+"pipx:pre-commit" = "latest"
+
+# Markdown utilities
+## linting
+"npm:markdownlint-cli2" = "0.18.1"
+
+# Formatting
+"npm:prettier" = "3.6.2"
+
+# Diagrams
+"npm:@mermaid-js/mermaid-cli" = "11.6.0"
+
+[tasks.prettier]
+run = "prettier --find-config-path --config .config/.prettierrc.json"
+
+[tasks.setup]
+description = "Setup development environment"
+run = """
+echo "Setting up development tools..."
+mise install
+pre-commit install
+vale sync
+echo "Development environment ready!"
+"""
+
+[tasks.md_lint_format]
+description = "Run linting and formatting all markdown files. (precommit-hook)"
+# Some tools may not respect .gitignore correctly
+# We implement the expansion ourselves to be consistent
+run = """
+not_ignored_md_files="$( ( git status --short| grep '^?' | cut -d\\  -f2- && git ls-files ) | sort -u | grep -E '\\.(md|markdown|mdown)$')"
+echo "Files to consider: "
+echo $not_ignored_md_files
+echo "Formatting..."
+(echo $not_ignored_md_files) | xargs prettier -w
+echo "Linting markdown file structure..."
+(echo $not_ignored_md_files) | xargs markdownlint-cli2
+echo "Linting markdown file content..."
+(echo $not_ignored_md_files) | xargs vale
+"""
+
+[tasks.precommit]
+description = "Run precommit hooks"
+run = """
+echo "Running pre-commit on all files..."
+pre-commit run --all-files
+"""

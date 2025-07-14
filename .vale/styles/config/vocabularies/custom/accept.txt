@@ -1,0 +1,8 @@
+Ecowitt
+(?i)reflectometry
+Zigbee
+Xiaomi
+Barkhausen
+(?i)transconductance
+(?i)mosfet
+(?i)mosfets
