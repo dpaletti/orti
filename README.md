@@ -1,4 +1,11 @@
+<!--
+SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # Soil moisture sensor
+
+[![REUSE status](https://api.reuse.software/badge/github.com/yourusername/yourproject)](https://api.reuse.software/info/github.com/yourusername/yourproject)
 
 **What**: a cheap, accurate, open, interoperable, and beautiful soil moisture
 sensor
@@ -127,8 +134,12 @@ each other's work.
 
 ## License
 
-- **Software**: [GPLv3](LICENSE-GPL3)
-- **Hardware**: [CERN-OHL-S-2.0](LICENSE-CERN-OHL-S)
-- **Everything else**: [CC-BY-SA-4.0](LICENSE-CC-BY-SA)
+Code, hardware and all other artifacts are licensed as open and copyleft.
 
-See [LICENSE](LICENSE) for details.
+- **software folder**: [GPLv3 or later](LICENSES/GPL-3.0-or-later.txt)
+- **hardware folder**: [CERN-OHL-S-2.0](LICENSES/CERN-OHL-S-2.0.txt)
+- **everything else**: [CC-BY-SA-4.0](LICENSES/CC-BY-SA-4.0.txt)
+
+This project is [REUSE compliant](https://reuse.software/). Each file contains
+SPDX license identifiers, and full license texts are available in the
+[`LICENSES/`](LICENSES/) directory.

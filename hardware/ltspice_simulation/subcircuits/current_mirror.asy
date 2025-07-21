@@ -1,3 +1,7 @@
+* SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+*
+* SPDX-License-Identifier: CERN-OHL-S-2.0
+
 Version 4
 SymbolType BLOCK
 LINE Normal 32 58 32 27

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+
+SPDX-License-Identifier: CERN-OHL-S-2.0
+-->
+
 # Ring oscillator analysis
 
 ![3-stage oscillator circuit](./resources/3_stage_differential_ring.png)

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
 repos:
   - repo: local
     hooks:
@@ -7,3 +11,8 @@ repos:
         entry: mise run md_lint_format
         language: system
         pass_filenames: false
+
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v4.0.3
+    hooks:
+      - id: reuse

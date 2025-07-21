@@ -1,3 +1,7 @@
+* SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+*
+* SPDX-License-Identifier: CERN-OHL-S-2.0
+
 Version 4
 SymbolType BLOCK
 RECTANGLE Normal -96 16 -161 -80
