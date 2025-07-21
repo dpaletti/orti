@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 <github.com/dpaletti/soil-moisture-sensor> contributors
+# SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
 #
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
@@ -8,14 +8,8 @@ version = 1
 [[annotations]]
 path = "*.json"
 precedence = "override"
-SPDX-FileCopyrightText = "2025 <github.com/dpaletti/soil-moisture-sensor> contributors"
+SPDX-FileCopyrightText = "2025 Daniele Paletti <danielepaletti98@gmail.com>"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
-
-[[annotations]]
-path = "LICENSE-*"
-precedence = "override"
-SPDX-License-Identifier = "NOASSERTION"
-SPDX-FileCopyrightText = "NOASSERTION"
 
 [[annotations]]
 path = "DCO"
@@ -26,20 +20,13 @@ SPDX-License-Identifier = "LicenseRef-Verbatim-Only"
 [[annotations]]
 path = ".vale/styles/config/vocabularies/custom/accept.txt"
 precedence = "override"
-SPDX-FileCopyrightText = "2025 <github.com/dpaletti/soil-moisture-sensor> contributors"
-SPDX-License-Identifier = "CC-BY-SA-4.0"
-
-
-[[annotations]]
-path = ".github/workflows/*"
-precedence = "override"
-SPDX-FileCopyrightText = "2025 <github.com/dpaletti/soil-moisture-sensor> contributors"
+SPDX-FileCopyrightText = "2025 Daniele Paletti <danielepaletti98@gmail.com>"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
 [[annotations]]
 path = "hardware/docs/resources/*"
 precedence = "override"
-SPDX-FileCopyrightText = "2025 <github.com/dpaletti/soil-moisture-sensor> contributors"
+SPDX-FileCopyrightText = "2025 Daniele Paletti <danielepaletti98@gmail.com>"
 SPDX-License-Identifier = "CERN-OHL-S-2.0"
 
 
