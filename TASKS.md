@@ -28,10 +28,11 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 ### Open source setup
 
-- [ ] move DCO to more structured CONTRIBUTING.MD
+- [ ] move DCO to more structured CONTRIBUTING.MD and finish setting up the
+      signing mechanism
 - [ ] add code of conduct on the basis of that from DuckDB (which is from
       another entity)
-- correctly protect the branches
+- [] correctly protect the branches
 
 ## Firmware development
 
