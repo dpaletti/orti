@@ -23,6 +23,13 @@ precedence = "override"
 SPDX-FileCopyrightText = "2025 Daniele Paletti <danielepaletti98@gmail.com>"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
+
+[[annotations]]
+path = ".github/workflows/*"
+precedence = "override"
+SPDX-FileCopyrightText = "2025 Daniele Paletti <danielepaletti98@gmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
 [[annotations]]
 path = "hardware/docs/resources/*"
 precedence = "override"

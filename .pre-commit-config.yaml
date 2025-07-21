@@ -12,6 +12,13 @@ repos:
         language: system
         pass_filenames: false
 
+      - id: dco_enforce
+        name: dco_enforce
+        description: check if commit-message is signed for dco compliance
+        entry: mise run dco_enforce
+        language: system
+        stages: [commit-msg]
+
   - repo: https://github.com/fsfe/reuse-tool
     rev: v4.0.3
     hooks:

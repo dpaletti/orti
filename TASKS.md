@@ -26,6 +26,13 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 - [ ] include battery voltage source
 - [ ] include USB-C recharging
 
+### Open source setup
+
+- [ ] move DCO to more structured CONTRIBUTING.MD
+- [ ] add code of conduct on the basis of that from DuckDB (which is from
+      another entity)
+- correctly protect the branches
+
 ## Firmware development
 
 ## Encasing design

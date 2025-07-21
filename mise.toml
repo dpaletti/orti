@@ -62,6 +62,18 @@ echo "Linting markdown file content..."
 (echo $not_ignored_md_files) | xargs vale
 """
 
+[tasks.dco_enforce]
+description = "Check if the commit message complies with developer certificate of origin (DCO)"
+run = """
+COMMIT_MSG_FILE=$1
+
+if ! grep -qE '^Signed-off-by:[[:space:]]+[^<]+<[^>]+>$' "$COMMIT_MSG_FILE"; then
+    echo "ERROR: Commit message is missing 'Signed-off-by' line." >&2
+    echo "Add it with '-s' in your commit command 'git commit -s ...'" >&2
+    exit 1
+fi
+"""
+
 [tasks.precommit]
 description = "Run precommit hooks"
 run = """
