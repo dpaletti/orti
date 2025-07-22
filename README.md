@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Soil moisture sensor
 
-[![REUSE](https://img.shields.io/github/actions/workflow/status/dpaletti/soil-moisture-sensor/reuse.yml?label=REUSE&success_label=compliant)](https://github.com/dpaletti/soil-moisture-sensor/actions/workflows/reuse.yml)
+[![REUSE compliance](https://img.shields.io/github/actions/workflow/status/dpaletti/soil-moisture-sensor/reuse.yml?label=REUSE)](https://github.com/dpaletti/soil-moisture-sensor/actions/workflows/reuse.yml)
 
 **What**: a cheap, accurate, open, interoperable, and beautiful soil moisture sensor
 
