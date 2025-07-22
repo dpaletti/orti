@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # Roadmap
 
 ## PCB development
@@ -19,6 +25,14 @@
 - [ ] replace ideal current source
 - [ ] include battery voltage source
 - [ ] include USB-C recharging
+
+### Open source setup
+
+- [ ] move DCO to more structured CONTRIBUTING.MD and finish setting up the signing
+      mechanism understand if GPG signing is needed or only the normal kind
+- [ ] add code of conduct on the basis of that from DuckDB (which is from another
+      entity)
+- [] correctly protect the branches
 
 ## Firmware development
 

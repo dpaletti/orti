@@ -1,5 +1,6 @@
-# For PCBs designed using KiCad: https://www.kicad.org/
-# Format documentation: https://kicad.org/help/file-formats/
+# SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Temporary files
 *.000
@@ -29,3 +30,14 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+/node_modules/
+
+# LTSpice
+*.log
+*.raw
+*.plt
+*.fft
+
+# Vale
+.vale/styles/proselint/
+.vale/styles/write-good/

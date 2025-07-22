@@ -1,11 +1,14 @@
+# SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
 [env]
 # Remove time from commits, keep only date
 UTC_DAY_BEGIN = "{{ now() | date(format='%Y-%m-%dT00:00:00+0000', timezone='UTC') }}"
 GIT_COMMITTER_DATE = "{{ env.UTC_DAY_BEGIN }}"
 GIT_AUTHOR_DATE = "{{ env.UTC_DAY_BEGIN }}"
 
-# Move vale (prose linter) config to a .config directory
-VALE_CONFIG_PATH = "{{config_root}}/.vale/vale.ini"
+VALE_CONFIG_PATH=".vale/vale.ini"
 
 [tools]
 node = "24"
@@ -16,7 +19,8 @@ pandoc = "3.6.1"
 vale = "3.12.0"
 
 # Precommit hooks
-"pipx:pre-commit" = "latest"
+"pipx:pre-commit" = "4.2.0"
+"pipx:reuse" = "5.0.2"
 
 # Markdown utilities
 ## linting
@@ -29,15 +33,28 @@ vale = "3.12.0"
 "npm:@mermaid-js/mermaid-cli" = "11.6.0"
 
 [tasks.prettier]
-run = "prettier --find-config-path --config .config/.prettierrc.json"
+run = "prettier --find-config-path --config .prettierrc.json"
 
 [tasks.setup]
 description = "Setup development environment"
 run = """
 echo "Setting up development tools..."
+
 mise install
+echo "Installed mise tools"
+
 pre-commit install
+echo "Installed pre-commit hooks"
+
 vale sync
+echo "Set up vale for linting"
+
+echo "Setting up DCO commit signing..."
+git config --local format.signoff true
+echo "Git configured to auto-sign commits with DCO"
+git config --local commit.gpgsign false
+echo "Disabled gpg commit sigining."
+
 echo "Development environment ready!"
 """
 
@@ -55,6 +72,18 @@ echo "Linting markdown file structure..."
 (echo $not_ignored_md_files) | xargs markdownlint-cli2
 echo "Linting markdown file content..."
 (echo $not_ignored_md_files) | xargs vale
+"""
+
+[tasks.dco_enforce]
+description = "Check if the commit message complies with developer certificate of origin (DCO)"
+run = """
+COMMIT_MSG_FILE=$1
+
+if ! grep -qE '^Signed-off-by:[[:space:]]+[^<]+<[^>]+>$' "$COMMIT_MSG_FILE"; then
+    echo "ERROR: Commit message is missing 'Signed-off-by' line." >&2
+    echo "Add it with '-s' in your commit command 'git commit -s ...'" >&2
+    exit 1
+fi
 """
 
 [tasks.precommit]
