@@ -2,6 +2,9 @@
 #
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
+ci:
+  skip: [reuse]
+
 repos:
   - repo: local
     hooks:
@@ -20,6 +23,6 @@ repos:
         stages: [commit-msg]
 
   - repo: https://github.com/fsfe/reuse-tool
-    rev: v4.0.3
+    rev: v5.0.2
     hooks:
       - id: reuse
