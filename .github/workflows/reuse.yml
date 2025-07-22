@@ -1,16 +1,32 @@
 name: REUSE Compliance Check
-
 on:
-  pull_request:
-    branches: [ main ]
   push:
-    branches: [ main ]
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
 
 jobs:
-  reuse:
+  reuse-compliance:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: REUSE Compliance Check
-      uses: fsfe/reuse-action@v2
+      - name: REUSE Compliance Check
+        uses: fsfe/reuse-action@v5
+
+      - name: Generate SPDX SBOM
+        if: success() && github.event_name == 'push'
+        uses: fsfe/reuse-action@v5
+        with:
+          args: spdx -o reuse.spdx
+
+      - name: Upload SPDX SBOM
+        if: success() && github.event_name == 'push'
+        uses: actions/upload-artifact@v4
+        with:
+          name: reuse-spdx-${{ github.sha }}
+          path: reuse.spdx
