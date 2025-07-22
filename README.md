@@ -141,3 +141,6 @@ Code, hardware and all other artifacts are licensed as open and copyleft.
 This project is [REUSE compliant](https://reuse.software/). Each file contains SPDX
 license identifiers, and full license texts are available in the
 [`LICENSES/`](LICENSES/) directory.
+
+A LICENSE file is provided in the root directory as the most representative license for
+the project.
