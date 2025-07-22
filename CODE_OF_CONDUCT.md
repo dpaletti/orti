@@ -30,4 +30,5 @@ confidentiality with regard to the reporter of an incident.
 
 This Code of Conduct is adapted from the
 [DuckDB code of conduct](https://github.com/duckdb/duckdb/blob/main/CODE_OF_CONDUCT.md)
+and the
 [CCC event code of conduct](https://www.ccc.de/en/updates/2016/a-reminder-to-be-excellent-to-each-other)
