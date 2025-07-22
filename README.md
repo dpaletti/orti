@@ -142,5 +142,5 @@ This project is [REUSE compliant](https://reuse.software/). Each file contains S
 license identifiers, and full license texts are available in the
 [`LICENSES/`](LICENSES/) directory.
 
-A LICENSE file is provided in the root directory as the most representative license for
-the project.
+License files are also provided in the project root directory to be correctly displayed
+in Github.
