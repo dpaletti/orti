@@ -8,8 +8,7 @@ UTC_DAY_BEGIN = "{{ now() | date(format='%Y-%m-%dT00:00:00+0000', timezone='UTC'
 GIT_COMMITTER_DATE = "{{ env.UTC_DAY_BEGIN }}"
 GIT_AUTHOR_DATE = "{{ env.UTC_DAY_BEGIN }}"
 
-# Move vale (prose linter) config to a .config directory
-VALE_CONFIG_PATH = "{{config_root}}/.vale/vale.ini"
+VALE_CONFIG_PATH=".vale/vale.ini"
 
 [tools]
 node = "24"
@@ -34,15 +33,28 @@ vale = "3.12.0"
 "npm:@mermaid-js/mermaid-cli" = "11.6.0"
 
 [tasks.prettier]
-run = "prettier --find-config-path --config .config/.prettierrc.json"
+run = "prettier --find-config-path --config .prettierrc.json"
 
 [tasks.setup]
 description = "Setup development environment"
 run = """
 echo "Setting up development tools..."
+
 mise install
+echo "Installed mise tools"
+
 pre-commit install
+echo "Installed pre-commit hooks"
+
 vale sync
+echo "Set up vale for linting"
+
+echo "Setting up DCO commit signing..."
+git config --local format.signoff true
+echo "Git configured to auto-sign commits with DCO"
+git config --local commit.gpgsign false
+echo "Disabled gpg commit sigining."
+
 echo "Development environment ready!"
 """
 

@@ -36,6 +36,7 @@ fp-info-cache
 *.log
 *.raw
 *.plt
+*.fft
 
 # Vale
 .vale/styles/proselint/
