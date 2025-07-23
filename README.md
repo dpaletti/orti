@@ -8,7 +8,6 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 [![Main](https://img.shields.io/badge/Main-passing-success?logo=github&logoColor=white)](https://github.com/dpaletti/soil-moisture-sensor/actions)
 [![REUSE compliance](https://img.shields.io/github/actions/workflow/status/dpaletti/soil-moisture-sensor/reuse.yml?label=REUSE%20compliance)](https://github.com/dpaletti/soil-moisture-sensor/actions/workflows/reuse.yml)
-[![DCO](https://img.shields.io/github/checks-status/dpaletti/soil-moisture-sensor/main?label=DCO%20compliance)](https://github.com/dpaletti/soil-moisture-sensor/pulls)
 
 **What**: a cheap, accurate, open, interoperable, and beautiful soil moisture sensor
 
