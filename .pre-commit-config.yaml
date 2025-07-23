@@ -2,11 +2,21 @@
 #
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
+default_install_hook_types:
+  - pre-commit
+  - commit-msg
+
 ci:
   # reuse is in another ci job
   skip: [reuse]
 
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: detect-private-key
+
   - repo: local
     hooks:
       - id: md_lint_format
@@ -21,9 +31,10 @@ repos:
         description: add dco signature on commit
         entry: mise run dco_enforce
         language: system
-        stages: [prepare-commit-msg]
+        stages: [commit-msg]
         always_run: true
-        pass_filenames: false
+        verbose: true
+        pass_filenames: true
 
   - repo: https://github.com/fsfe/reuse-tool
     rev: v5.0.2

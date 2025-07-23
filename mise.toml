@@ -77,7 +77,7 @@ echo "Linting markdown file content..."
 [tasks.dco_enforce]
 description = "Add developer certificate of origin (DCO) signature on commit"
 run = """
-
+#!/bin/bash
 NAME=$(git config user.name)
 EMAIL=$(git config user.email)
 SIGNOFF="Signed-off-by: $NAME <$EMAIL>"
