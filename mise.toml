@@ -1,0 +1,102 @@
+# SPDX-FileCopyrightText: 2025 <github.com/dpaletti/soil-moisture-sensor> contributors
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+[env]
+# Remove time from commits, keep only date
+UTC_DAY_BEGIN = "{{ now() | date(format='%Y-%m-%dT00:00:00+0000', timezone='UTC') }}"
+GIT_COMMITTER_DATE = "{{ env.UTC_DAY_BEGIN }}"
+GIT_AUTHOR_DATE = "{{ env.UTC_DAY_BEGIN }}"
+
+VALE_CONFIG_PATH=".vale/vale.ini"
+
+[tools]
+node = "24"
+python = "3.13"
+pandoc = "3.6.1"
+
+# Prose linting
+vale = "3.12.0"
+
+# Precommit hooks
+"pipx:pre-commit" = "4.2.0"
+"pipx:reuse" = "5.0.2"
+
+# Markdown utilities
+## linting
+"npm:markdownlint-cli2" = "0.18.1"
+
+# Formatting
+"npm:prettier" = "3.6.2"
+
+# Diagrams
+"npm:@mermaid-js/mermaid-cli" = "11.6.0"
+
+[tasks.prettier]
+run = "prettier --find-config-path --config .prettierrc.json"
+
+[tasks.setup]
+description = "Setup development environment"
+run = """
+echo "Setting up development tools..."
+
+mise install
+echo "Installed mise tools"
+
+pre-commit install
+echo "Installed pre-commit hooks"
+
+vale sync
+echo "Set up vale for linting"
+
+echo "Development environment ready!"
+"""
+
+[tasks.md_lint_format]
+description = "Run linting and formatting all markdown files. (precommit-hook)"
+# Some tools may not respect .gitignore correctly
+# We implement the expansion ourselves to be consistent
+run = """
+not_ignored_md_files="$( ( git status --short| grep '^?' | cut -d\\  -f2- && git ls-files ) | sort -u | grep -E '\\.(md|markdown|mdown)$')"
+echo "Files to consider: "
+echo $not_ignored_md_files
+echo "Formatting..."
+(echo $not_ignored_md_files) | xargs prettier -w
+echo "Linting markdown file structure..."
+(echo $not_ignored_md_files) | xargs markdownlint-cli2
+echo "Linting markdown file content..."
+(echo $not_ignored_md_files) | xargs vale
+"""
+
+[tasks.dco_enforce]
+description = "Add developer certificate of origin (DCO) signature on commit"
+run = """
+#!/bin/bash
+NAME=$(git config user.name)
+EMAIL=$(git config user.email)
+SIGNOFF="Signed-off-by: $NAME <$EMAIL>"
+
+# Check if argument is provided
+if [ -z "$1" ]; then
+    echo "Skipping sign-off: no commit message file provided"
+    exit 0
+fi
+
+if [ ! -f "$1" ] || [ ! -s "$1" ]; then
+    echo "Skipping sign-off: commit message file is empty, does not exist or not applicable."
+    exit 0
+fi
+
+# Add sign-off to the commit message if not already present
+if ! grep -q "^$SIGNOFF" "$1"; then
+    echo "" >> "$1"
+    echo "$SIGNOFF" >> "$1"
+fi
+"""
+
+[tasks.precommit]
+description = "Run precommit hooks"
+run = """
+echo "Running pre-commit on all files..."
+pre-commit run --all-files
+"""
