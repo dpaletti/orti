@@ -82,6 +82,5 @@ and the solution. Include the relevant issue number if applicable.
 
 ## Do you want to add a new feature?
 
-- open a [discussion](https://github.com/dpaletti/soil-moisture-sensor/discussions)
 - announce that you are working or want to work on a specific issue
 - avoid large pull requests, they are hard to review
