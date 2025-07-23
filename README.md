@@ -8,6 +8,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 [![Main](https://img.shields.io/badge/Main-passing-success?logo=github&logoColor=white)](https://github.com/dpaletti/soil-moisture-sensor/actions)
 [![REUSE compliance](https://img.shields.io/github/actions/workflow/status/dpaletti/soil-moisture-sensor/reuse.yml?label=REUSE%20compliance)](https://github.com/dpaletti/soil-moisture-sensor/actions/workflows/reuse.yml)
+[![DCO](https://img.shields.io/github/checks-status/dpaletti/soil-moisture-sensor/main?label=DCO%20compliance)](https://github.com/dpaletti/soil-moisture-sensor/pulls)
 
 **What**: a cheap, accurate, open, interoperable, and beautiful soil moisture sensor
 
@@ -76,7 +77,7 @@ phase.
 
 ## When can I have one?
 
-A lot of stuff to get through (contributors welcome!):
+A lot of stuff to get through, [contributors are welcome!](CONTRIBUTING.md).
 
 - [x] high level product design
 - [x] circuit design
@@ -141,7 +142,10 @@ Code, hardware and all other artifacts are licensed as open and copyleft.
 
 This project is [REUSE compliant](https://reuse.software/). Each file contains SPDX
 license identifiers, and full license texts are available in the
-[`LICENSES/`](LICENSES/) directory.
+[`LICENSES/`](LICENSES/) directory. License files are also provided in the project root
+directory to be correctly displayed in Github.
 
-License files are also provided in the project root directory to be correctly displayed
-in Github.
+This project employs the developer certificate of origin (see [DCO](DCO)) to ensure
+third-parties don't claim ownership over contributions. DCO is enforced through a
+'signed-off-by' section in commit messages, see [contributors guide](CONTRIBUTING.md)
+for more information on how to add one to your commit messages.
