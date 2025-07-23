@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
 ci:
+  # reuse is in another ci job
   skip: [reuse]
 
 repos:
@@ -17,10 +18,12 @@ repos:
 
       - id: dco_enforce
         name: dco_enforce
-        description: check if commit-message is signed for dco compliance
+        description: add dco signature on commit
         entry: mise run dco_enforce
         language: system
-        stages: [commit-msg]
+        stages: [prepare-commit-msg]
+        always_run: true
+        pass_filenames: false
 
   - repo: https://github.com/fsfe/reuse-tool
     rev: v5.0.2

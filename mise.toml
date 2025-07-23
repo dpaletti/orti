@@ -49,12 +49,6 @@ echo "Installed pre-commit hooks"
 vale sync
 echo "Set up vale for linting"
 
-echo "Setting up DCO commit signing..."
-git config --local format.signoff true
-echo "Git configured to auto-sign commits with DCO"
-git config --local commit.gpgsign false
-echo "Disabled gpg commit sigining."
-
 echo "Development environment ready!"
 """
 
@@ -75,14 +69,28 @@ echo "Linting markdown file content..."
 """
 
 [tasks.dco_enforce]
-description = "Check if the commit message complies with developer certificate of origin (DCO)"
+description = "Add developer certificate of origin (DCO) signature on commit"
 run = """
-COMMIT_MSG_FILE=$1
+#!/bin/bash
+NAME=$(git config user.name)
+EMAIL=$(git config user.email)
+SIGNOFF="Signed-off-by: $NAME <$EMAIL>"
 
-if ! grep -qE '^Signed-off-by:[[:space:]]+[^<]+<[^>]+>$' "$COMMIT_MSG_FILE"; then
-    echo "ERROR: Commit message is missing 'Signed-off-by' line." >&2
-    echo "Add it with '-s' in your commit command 'git commit -s ...'" >&2
-    exit 1
+# Check if argument is provided
+if [ -z "$1" ]; then
+    echo "Skipping sign-off: no commit message file provided"
+    exit 0
+fi
+
+if [ ! -f "$1" ] || [ ! -s "$1" ]; then
+    echo "Skipping sign-off: commit message file is empty, does not exist or not applicable."
+    exit 0
+fi
+
+# Add sign-off to the commit message if not already present
+if ! grep -q "^$SIGNOFF" "$1"; then
+    echo "" >> "$1"
+    echo "$SIGNOFF" >> "$1"
 fi
 """
 
