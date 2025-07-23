@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+SPDX-FileCopyrightText: 2025 <github.com/dpaletti/soil-moisture-sensor> contributors
 
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->

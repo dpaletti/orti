@@ -1,138 +1,87 @@
 <!--
-SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+SPDX-FileCopyrightText: 2025 <github.com/dpaletti/soil-moisture-sensor> contributors
+
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
 # Contributing
 
+Hi, glad you are here. First, we setup the development environment so you are aligned
+with all other contributors.
+
 ## Development Setup
 
-1. Fork the repository and clone your fork:
+Development environment reproducibility is guaranteed by [mise](https://mise.jdx.dev/).
 
-   ```bash
-   git clone https://github.com/dpaletti/soil-moisture-sensor.git
-   cd [project-name]
-   ```
+```bash
+# Fork the repo (from github GUI) then clone
+git clone https://github.com/<your_username>/soil_moisture-sensor.git
 
-2. Set up the development environment:
+# Keep it updated with upstream
+git remote add upstream https://github.com/dpaletti/soil-moisture-sensor.git
+git fetch upstream
 
-   ```bash
-   # Install mise if you haven't already
-   curl https://mise.run | sh
+# Create your branch
+git checkout -b <branch_name>
 
-   # Run the setup task (this installs and configures all development tools)
-   mise run setup
-   ```
+# Install mise if you haven't already
+curl https://mise.run | sh
 
-3. Create a new branch for your feature:
+# Setup dev environment
+mise setup
+```
 
-   ```bash
-   git checkout -b <your_branch>
-   ```
+Once you are done with this you will have installed all the tools specified in
+`mise.toml` (which you will find in the root directory).
 
-4. After each commit pre-commit hooks run. Do not disable them, they will run again in
-   CI after the pull request.
+### Available tools
+
+[Pre-commit](https://pre-commit.com/) manages everything that runs when you commit
+locally and will run again in CI, that is when you open your pull-request:
+
+- adds 'Signed-off-by: \<git user name\> \<git email\>' at the end of each commit
+  message (if not already there) for developer certificate of origin (DCO) compliance.
+  This is a legal tool to ensure that third parties cannot claim ownership over
+  contributors work (see [DCO file](DCO) for more legal details).
+- lints and formats markdown files:
+  - [prettier](https://prettier.io/): formats markdown (and many other) files
+  - [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2): lints markdown
+    for style and syntax errors
+  - [vale](https://vale.sh/): checks grammar and prose, if some word does not get
+    recognised add it to
+    [the vocabulary](.vale/styles/config/vocabularies/custom/accept.txt)
+- runs [reuse tool](https://reuse.software/) to check for reuse compliance. This allows
+  automated license compliance. When you create new files you need to add a copyright
+  and license notice on top.
+
+  ```bash
+  reuse annotate --copyright "<github.com/dpaletti/soil-moisture-sensor> contributors" --license "one among CERN-OHL-S-2.0 or GPLv3-or-later or CC-BY-SA-4.0" file_name_or_pattern
+
+  # This is an example of how has been done on existing files
+  # reuse annotate --copyright "<github.com/dpaletti/soil-moisture-sensor> contributors" --license "CC-BY-SA-4.0" README.md
+  # This will also add the correct year before the notice
+  # This command works also on patterns for bulk annotation
+  ```
+
+  If the file is non-commentable (e.g. JSON or binary) please add an annotations section
+  to [REUSE.toml](REUSE.toml).
 
 ## Did you find a bug?
 
-Ensure the bug was not already reported by searching on Github under
-[Issues](https://github.com/dpaletti/soil-moisture-sensor/issues). If unable to find an
-open issue addressing the problem,
-[open a new one](https://github.com/dpaletti/soil-moisture-sensor/issues/new). Include a
-title and clear description, as much relevant information as possible, and a code sample
-or an executable test case demonstrating the expected behavior.
+Ensure the bug was not already reported among the
+[Issues](https://github.com/dpaletti/soil-moisture-sensor/issues). If you are unable to
+find an open issue addressing the problem, open a new one. Be sure to include a title
+and clear description, as much relevant information as possible, and a code sample or an
+executable test case demonstrating the expected behavior that is not occurring.
 
 ## Did you write a patch that fixes a bug?
 
-1. If applicable, add a unit test case to make sure the issue does not occur again.
-2. Open a new Github pull request with the patch.
-3. Ensure the PR description describes the problem and solution. Include the relevant
-   issue number if applicable.
+Great! If possible, add a unit test case to make sure the issue does not occur again.
+Open a new Github pull request with the patch. Ensure the PR describes both the problem
+and the solution. Include the relevant issue number if applicable.
 
-## Outside Contributors
+## Do you want to add a new feature?
 
-1. Discuss your intended changes with the core team on Github
-2. Announce that you are working or want to work on a specific issue
-3. Avoid large pull requests - they are much less likely to be merged as they are harder
-   to review
-
-## Pull Requests
-
-1. Do not commit/push directly to the main branch. Instead, create a fork and file a
-   pull request.
-2. When maintaining a branch, merge frequently with the main.
-3. When maintaining a branch, submit pull requests to the main frequently.
-4. If you are working on a bigger issue try to split it up into smaller issues.
-5. Please do not open "Draft" pull requests. Rather, use issues or discussion topics to
-   discuss whatever needs discussing
-
-## Code of Conduct
-
-This project and everyone participating is governed by a
-[Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this
-code. Please report unacceptable behavior to
-[danielepaletti98@gmail.com](danielepaletti98@gmail.com).
-
-## Developer Certificate of Origin (DCO)
-
-This project uses the Developer Certificate of Origin (DCO) to ensure that contributors
-have the right to submit their contributions. All commit messages must contain the
-Signed-off-by line with an email address that matches the commit author.
-
-### What is the DCO?
-
-The DCO is a lightweight mechanism for contributors to certify that they wrote or
-otherwise have the right to submit code or documentation to a project. The full text of
-the DCO can be found in the [DCO](DCO) file.
-
-### How to Sign Your Commits
-
-If you've run `mise run setup`, your commits will automatically be signed (and gpg
-signing will be turned off). Otherwise, you can manually sign commits using:
-
-```bash
-git commit -s -m "Your commit message"
-```
-
-To sign off on the last commit you made:
-
-```bash
-git commit --amend -s
-```
-
-To sign off on the last N commits:
-
-```bash
-git rebase HEAD~N --signoff
-```
-
-### DCO Check Failed?
-
-If the DCO check fails on your PR, it means one or more of your commits are missing the
-sign-off. You can fix this by:
-
-1. Rebasing and signing your commits:
-
-   ```bash
-   git rebase -i main
-   # Mark commits for edit, then for each:
-   git commit --amend -s
-   git rebase --continue
-   ```
-
-2. Force push your branch:
-
-   ```bash
-   git push --force-with-lease origin your-branch
-   ```
-
-## GPG Signatures
-
-GPG signatures are disabled by `mise run setup`. GPG signatures will only be applied to
-tags to ensure the integrity of releases while reducing signature usage as much as
-possible.
-
-## Attribution
-
-This file is partially based on
-[DuckDB contribution guide](https://github.com/duckdb/duckdb/blob/main/CONTRIBUTING.md)
+- open a [discussion](https://github.com/dpaletti/soil-moisture-sensor/discussions)
+- announce that you are working or want to work on a specific issue
+- avoid large pull requests, they are hard to review
