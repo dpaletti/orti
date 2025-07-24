@@ -76,18 +76,9 @@ phase.
 
 ## When can I have one?
 
-A lot of stuff to get through, [contributors are welcome!](CONTRIBUTING.md).
-
-- [x] high level product design
-- [x] circuit design
-- [ ] circuit simulation --> **ongoing in the simulation branch**
-- [ ] PCB layout and manufacturing
-- [ ] firmware development
-- [ ] mobile app development for remote sensor control
-- [ ] encasing design
-- [ ] testing with early adopters
-
-For a more detailed view of past, ongoing and future activities see [tasks](TASKS.md).
+A lot of stuff to get through, [contributors are welcome!](CONTRIBUTING.md). For a more
+detailed view of past, ongoing and future activities see the
+[kanban board](https://github.com/users/dpaletti/projects/2).
 
 ## How does this make sense?
 

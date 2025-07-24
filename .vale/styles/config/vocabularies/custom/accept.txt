@@ -12,3 +12,4 @@ Github
 (?i)rebasing
 Daniele
 Paletti
+(?i)kanban
