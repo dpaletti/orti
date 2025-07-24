@@ -76,12 +76,6 @@ NAME=$(git config user.name)
 EMAIL=$(git config user.email)
 SIGNOFF="Signed-off-by: $NAME <$EMAIL>"
 
-# Check if argument is provided
-if [ -z "$1" ]; then
-    echo "Skipping sign-off: no commit message file provided"
-    exit 0
-fi
-
 if [ ! -f "$1" ] || [ ! -s "$1" ]; then
     echo "Skipping sign-off: commit message file is empty, does not exist or not applicable."
     exit 0
