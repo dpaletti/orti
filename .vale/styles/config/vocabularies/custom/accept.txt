@@ -14,3 +14,4 @@ Daniele
 Paletti
 (?i)kanban
 (?i)Orti
+LTSpice
