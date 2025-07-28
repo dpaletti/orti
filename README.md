@@ -1,10 +1,10 @@
 <!--
-SPDX-FileCopyrightText: 2025 <github.com/dpaletti/soil-moisture-sensor> contributors
+SPDX-FileCopyrightText: 2025 <github.com/dpaletti/orti> contributors
 
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-# Soil moisture sensor
+# Orti: soil moisture sensor
 
 [![Main](https://img.shields.io/badge/Main-passing-success?logo=github&logoColor=white)](https://github.com/dpaletti/soil-moisture-sensor/actions)
 [![REUSE compliance](https://img.shields.io/github/actions/workflow/status/dpaletti/soil-moisture-sensor/reuse.yml?label=REUSE%20compliance)](https://github.com/dpaletti/soil-moisture-sensor/actions/workflows/reuse.yml)
@@ -24,6 +24,9 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 ⟶ [When can I have one?](#when-can-i-have-one)
 
 ⟶ [How does this make sense?](#how-does-this-make-sense)
+
+**Orti** /'orti/ - Italian for kitchen gardens where people grow produce for their own
+use.
 
 ## What's inside?
 

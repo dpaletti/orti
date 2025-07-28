@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2025 <github.com/dpaletti/soil-moisture-sensor> contributors
+SPDX-FileCopyrightText: 2025 <github.com/dpaletti/orti> contributors
 
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
