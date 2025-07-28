@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2025 <github.com/dpaletti/soil-moisture-sensor> contributors
+SPDX-FileCopyrightText: 2025 <github.com/dpaletti/orti> contributors
 
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
@@ -15,10 +15,10 @@ Development environment reproducibility is guaranteed by [mise](https://mise.jdx
 
 ```bash
 # Fork the repo (from github GUI) then clone
-git clone https://github.com/<your_username>/soil_moisture-sensor.git
+git clone https://github.com/<your_username>/orti.git
 
 # Keep it updated with upstream
-git remote add upstream https://github.com/dpaletti/soil-moisture-sensor.git
+git remote add upstream https://github.com/dpaletti/orti.git
 git fetch upstream
 
 # Create your branch
@@ -48,17 +48,17 @@ locally and will run again in CI, that is when you open your pull-request:
   - [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2): lints markdown
     for style and syntax errors
   - [vale](https://vale.sh/): checks grammar and prose, if some word does not get
-    recognised add it to
-    [the vocabulary](.vale/styles/config/vocabularies/custom/accept.txt)
+    recognised add it to the
+    [vocabulary](.vale/styles/config/vocabularies/custom/accept.txt)
 - runs [reuse tool](https://reuse.software/) to check for reuse compliance. This allows
   automated license compliance. When you create new files you need to add a copyright
   and license notice on top.
 
   ```bash
-  reuse annotate --copyright "<github.com/dpaletti/soil-moisture-sensor> contributors" --license "one among CERN-OHL-S-2.0 or GPLv3-or-later or CC-BY-SA-4.0" file_name_or_pattern
+  reuse annotate --copyright "<github.com/dpaletti/orti> contributors" --license "one among CERN-OHL-S-2.0 or GPLv3-or-later or CC-BY-SA-4.0" file_name_or_pattern
 
   # This is an example of how has been done on existing files
-  # reuse annotate --copyright "<github.com/dpaletti/soil-moisture-sensor> contributors" --license "CC-BY-SA-4.0" README.md
+  # reuse annotate --copyright "<github.com/dpaletti/orti> contributors" --license "CC-BY-SA-4.0" README.md
   # This will also add the correct year before the notice
   # This command works also on patterns for bulk annotation
   ```
@@ -69,9 +69,9 @@ locally and will run again in CI, that is when you open your pull-request:
 ## Did you find a bug?
 
 Ensure the bug was not already reported among the
-[Issues](https://github.com/dpaletti/soil-moisture-sensor/issues). If you are unable to
-find an open issue addressing the problem, open a new one. Be sure to include a title
-and clear description, as much relevant information as possible, and a code sample or an
+[Issues](https://github.com/dpaletti/orti/issues). If you are unable to find an open
+issue addressing the problem, open a new one. Be sure to include a title and clear
+description, as much relevant information as possible, and a code sample or an
 executable test case demonstrating the expected behavior that is not occurring.
 
 ## Did you write a patch that fixes a bug?
