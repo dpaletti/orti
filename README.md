@@ -6,8 +6,8 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Orti: soil moisture sensor
 
-[![Main](https://img.shields.io/badge/Main-passing-success?logo=github&logoColor=white)](https://github.com/dpaletti/soil-moisture-sensor/actions)
-[![REUSE compliance](https://img.shields.io/github/actions/workflow/status/dpaletti/soil-moisture-sensor/reuse.yml?label=REUSE%20compliance)](https://github.com/dpaletti/soil-moisture-sensor/actions/workflows/reuse.yml)
+[![Main](https://img.shields.io/badge/Main-passing-success?logo=github&logoColor=white)](https://github.com/dpaletti/orti/actions)
+[![REUSE compliance](https://img.shields.io/github/actions/workflow/status/dpaletti/orti/reuse.yml?label=REUSE%20compliance)](https://github.com/dpaletti/orti/actions/workflows/reuse.yml)
 
 **What**: a cheap, accurate, open, interoperable, and beautiful soil moisture sensor
 
@@ -25,7 +25,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 ⟶ [How does this make sense?](#how-does-this-make-sense)
 
-**Orti** /'orti/ - Italian for kitchen gardens where people grow produce for their own
+**Orti** /'orti/: Italian for kitchen gardens where people grow produce for their own
 use.
 
 ## What's inside?
@@ -50,17 +50,17 @@ Because existing products do not tick all the boxes.
 | Research grade (ECH20, SMT-100)    | 150-200      | highest  | high frequency reflectometry     | Wired                                   |
 | DIY (B-Parasite)                   | DIY          | moderate | capacitive                       | Button (replaceable)                    |
 | Maker (PLT-1)                      | ~20 (+extra) | moderate | capacitive                       | 18650 (rechargeable + replaceable)      |
-| **Our solution**                   | **~20**      | **high** | **high frequency reflectometry** | **2× AAA (rechargeable + replaceable)** |
+| **Orti**                           | **~20**      | **high** | **high frequency reflectometry** | **2× AAA (rechargeable + replaceable)** |
 
 ### Feature comparison
 
-| Product          | Home Assistant | Zigbee/Matter | Mobile App | Plant DB integration | Ambient temp/humidity | Soil temperature | Irradiation | Outdoor use | Open  |
-| ---------------- | -------------- | ------------- | ---------- | -------------------- | --------------------- | ---------------- | ----------- | ----------- | ----- |
-| Xiaomi MI Flora  | ✓              | ✗             | ✓          | ✓                    | ✓                     | ✗                | ✓           | ✓           | ✗     |
-| Ecowitt WH51     | ✗              | ✗             | ✓          | ✗                    | ✗                     | ✗                | ✗           | ✓           | ✗     |
-| B-Parasite       | ✓              | ✓             | ✗          | ✗                    | ✓                     | ✗                | ✓           | ✓           | ✓     |
-| PLT-1            | ✓              | ✗             | ✗          | ✗                    | ✗                     | ✓                | ✗           | ✗           | ✗     |
-| **Our solution** | **✓**          | **✓**         | **✓**      | **✓**                | **✗**                 | **✓**            | **✗**       | **✓**       | **✓** |
+| Product         | Home Assistant | Zigbee/Matter | Mobile App | Plant DB integration | Ambient temp/humidity | Soil temperature | Irradiation | Outdoor use | Open  |
+| --------------- | -------------- | ------------- | ---------- | -------------------- | --------------------- | ---------------- | ----------- | ----------- | ----- |
+| Xiaomi MI Flora | ✓              | ✗             | ✓          | ✓                    | ✓                     | ✗                | ✓           | ✓           | ✗     |
+| Ecowitt WH51    | ✗              | ✗             | ✓          | ✗                    | ✗                     | ✗                | ✗           | ✓           | ✗     |
+| B-Parasite      | ✓              | ✓             | ✗          | ✗                    | ✓                     | ✗                | ✓           | ✓           | ✓     |
+| PLT-1           | ✓              | ✗             | ✗          | ✗                    | ✗                     | ✓                | ✗           | ✗           | ✗     |
+| **Orti**        | **✓**          | **✓**         | **✓**      | **✓**                | **✗**                 | **✓**            | **✗**       | **✓**       | **✓** |
 
 **Why are we missing ambient temperature and humidity sensing?**
 
@@ -79,8 +79,9 @@ phase.
 
 ## When can I have one?
 
-A lot of stuff to get through, [contributors are welcome!](CONTRIBUTING.md). For a more
-detailed view of past, ongoing and future activities see the
+A lot of stuff to get through, [contributors are welcome!](CONTRIBUTING.md).
+
+For a more detailed view of past, ongoing and future activities see the
 [kanban board](https://github.com/users/dpaletti/projects/2).
 
 ## How does this make sense?
