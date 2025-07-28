@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2025 <github.com/dpaletti/orti> contributors
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+version = 1
+
+
+[[annotations]]
+path = "*.json"
+precedence = "override"
+SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "LICENSE-*"
+precedence = "override"
+SPDX-License-Identifier = "NOASSERTION"
+SPDX-FileCopyrightText = "NOASSERTION"
+
+[[annotations]]
+path = "DCO"
+precedence = "override"
+SPDX-FileCopyrightText = "Copyright (C) 2004, 2006 The Linux Foundation and its contributors"
+SPDX-License-Identifier = "LicenseRef-Verbatim-Only"
+
+[[annotations]]
+path = ".vale/styles/config/vocabularies/custom/accept.txt"
+precedence = "override"
+SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+
+[[annotations]]
+path = ".github/workflows/*"
+precedence = "override"
+SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "hardware/docs/resources/*"
+precedence = "override"
+SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
+SPDX-License-Identifier = "CERN-OHL-S-2.0"
+
+

@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2025 <github.com/dpaletti/orti> contributors
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+default_install_hook_types:
+  - pre-commit
+  - commit-msg
+
+ci:
+  # reuse is in another ci job
+  skip: [reuse]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: detect-private-key
+
+  - repo: local
+    hooks:
+      - id: md_lint_format
+        name: md_lint_format
+        description: run formatting and linting on markdown files
+        entry: mise run md_lint_format
+        language: system
+        pass_filenames: false
+
+      - id: dco_enforce
+        name: dco_enforce
+        description: add dco signature on commit
+        entry: mise run dco_enforce
+        language: system
+        stages: [commit-msg]
+        always_run: true
+        verbose: true
+        pass_filenames: true
+
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v5.0.2
+    hooks:
+      - id: reuse
