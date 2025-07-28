@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2025 Daniele Paletti <danielepaletti98@gmail.com>
+SPDX-FileCopyrightText: 2025 <github.com/dpaletti/orti> contributors
 
 SPDX-License-Identifier: CERN-OHL-S-2.0
 -->
