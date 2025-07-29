@@ -6,10 +6,6 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Hardware
 
-## Block Diagram
-
-![block diagram](./docs/resources/block_diagram.png)
-
 ## LTSpice Simulation Setup
 
 ### Installation
@@ -39,3 +35,7 @@ runs natively on Windows and through Wine on Linux.
 
 2. **Run simulations:**
    - Open `*_sim` files in the `ltspice_simulation` folder to run specific simulations
+
+## Block Diagram
+
+![block diagram](./docs/resources/block_diagram.mmd.png)

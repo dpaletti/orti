@@ -52,6 +52,13 @@ echo "Set up vale for linting"
 echo "Development environment ready!"
 """
 
+[tasks.precommit]
+description = "Run precommit hooks"
+run = """
+echo "Running pre-commit on all files..."
+pre-commit run --all-files
+"""
+
 [tasks.md_lint_format]
 description = "Run linting and formatting all markdown files. (precommit-hook)"
 # Some tools may not respect .gitignore correctly
@@ -88,9 +95,48 @@ if ! grep -q "^$SIGNOFF" "$1"; then
 fi
 """
 
-[tasks.precommit]
-description = "Run precommit hooks"
-run = """
-echo "Running pre-commit on all files..."
-pre-commit run --all-files
+[tasks.compile_mermaid]
+description="Compile mermaid diagrams to PNG given config file"
+run="""
+#!/bin/bash
+CONFIG_FILE=".mermaid_config.json"
+RESOURCES_DIR="resources"
+
+if [ -n "$CI" ] || [ -n "$GITHUB_ACTIONS" ] || [ -n "$GITLAB_CI" ] || [ -n "$CIRCLECI" ] || [ -n "$JENKINS_HOME" ]; then
+    IN_CI=true
+    echo "Running in CI environment - git add will be skipped"
+else
+    IN_CI=false
+fi
+
+for MMD_FILE in "$@"; do
+    # Get the directory containing the .mmd file
+    DIR=$(dirname "$MMD_FILE")
+
+    # Get just the filename without extension
+    BASENAME=$(basename "$MMD_FILE" .mmd)
+
+    # Create resources directory relative to the .mmd file
+    OUTPUT_DIR="$DIR/$RESOURCES_DIR"
+    mkdir -p "$OUTPUT_DIR"
+
+    # Generate output path: same name but .png extension in resources folder
+    # .mmd.png is required to correctly identify png generated from mermaid
+    # from general png
+    PNG_FILE="$OUTPUT_DIR/$BASENAME.mmd.png"
+
+    echo "Compiling $MMD_FILE -> $PNG_FILE"
+
+    # Compile the diagram
+    if ! mmdc -i "$MMD_FILE" -o "$PNG_FILE" --configFile $CONFIG_FILE; then
+        echo "Failed to compile $MMD_FILE"
+        exit 1
+    fi
+
+    # Stage the generated PNG file
+    if [ "$IN_CI" = false ]; then
+        git add "$PNG_FILE"
+    fi
+done
+
 """
