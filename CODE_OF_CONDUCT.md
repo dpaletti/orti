@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2025 <github.com/dpaletti/orti> contributors
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-# Code of Conduct
+# Code of conduct
 
 **All creatures are welcome**: We aim to create a safe space for all community members,
 regardless of their age, race, gender, sexual orientation, physical appearance or

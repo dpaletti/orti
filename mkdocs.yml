@@ -21,10 +21,6 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
-nav:
-  - contributing: CONTRIBUTING.md
-  - "Code of conduct": CODE_OF_CONDUCT.md
-
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
