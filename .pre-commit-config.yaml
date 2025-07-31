@@ -6,10 +6,6 @@ default_install_hook_types:
   - pre-commit
   - commit-msg
 
-ci:
-  # reuse is in another ci job
-  skip: [reuse]
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0

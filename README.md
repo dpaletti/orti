@@ -42,7 +42,7 @@ use.
 
 Because existing products do not tick all the boxes.
 
-### High-Level Comparison
+### High-Level comparison
 
 | Product                            | Price (€)    | Accuracy | Technology                       | Power supply                            |
 | ---------------------------------- | ------------ | -------- | -------------------------------- | --------------------------------------- |
@@ -122,10 +122,6 @@ regenerates the product through open collaboration.
 > Bootstrapping, make the business profitable as soon as possible and grow organically.
 > We are in for the long run.
 
-As you may have noticed, **I am pitching directly to you**. No notion of external
-investors or venture capital, only contributors reaping the benefits of each other's
-work.
-
 ## License
 
 Code, hardware and all other artifacts are licensed as open and copyleft.
@@ -136,10 +132,12 @@ Code, hardware and all other artifacts are licensed as open and copyleft.
 
 This project is [REUSE compliant](https://reuse.software/). Each file contains SPDX
 license identifiers, and full license texts are available in the
-[`LICENSES/`](LICENSES/) directory. License files are also provided in the project root
-directory to be correctly displayed in Github.
+[`LICENSES/`](https://github.com/dpaletti/orti/blob/main/LICENSES) directory. License
+files are also provided in the project root directory to be correctly displayed in
+Github.
 
-This project employs the developer certificate of origin (see [DCO](DCO)) to ensure
-third-parties don't claim ownership over contributions. DCO is enforced through a
-'signed-off-by' section in commit messages, see [contributors guide](CONTRIBUTING.md)
-for more information on how to add one to your commit messages.
+This project employs the developer certificate of origin (see
+[DCO](https://github.com/dpaletti/orti/blob/main/DCO)) to ensure third-parties don't
+claim ownership over contributions. DCO is enforced through a 'signed-off-by' section in
+commit messages, see [contributors guide](CONTRIBUTING.md) for more information on how
+to add one to your commit messages.

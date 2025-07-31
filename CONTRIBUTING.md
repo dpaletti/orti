@@ -42,7 +42,8 @@ locally and will run again in CI, that is when you open your pull-request:
 - adds 'Signed-off-by: \<git user name\> \<git email\>' at the end of each commit
   message (if not already there) for developer certificate of origin (DCO) compliance.
   This is a legal tool to ensure that third parties cannot claim ownership over
-  contributors work (see [DCO file](DCO) for more legal details).
+  contributors work (see [DCO file](https://github.com/dpaletti/orti/blob/main/DCO) for
+  more legal details).
 - lints and formats markdown files:
   - [prettier](https://prettier.io/): formats markdown (and many other) files
   - [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2): lints markdown
@@ -64,7 +65,7 @@ locally and will run again in CI, that is when you open your pull-request:
   ```
 
   If the file is non-commentable (e.g. JSON or binary) please add an annotations section
-  to [REUSE.toml](REUSE.toml).
+  to [REUSE.toml](https://github.com/dpaletti/orti/blob/main/REUSE.toml).
 
 ## Did you find a bug?
 

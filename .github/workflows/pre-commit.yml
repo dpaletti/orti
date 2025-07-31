@@ -8,10 +8,12 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install mise
         uses: jdx/mise-action@v2
       - name: Run mise setup
         run: mise run setup
       - uses: actions/setup-python@v3
       - uses: pre-commit/action@v3.0.1
+        env:
+          SKIP: reuse
