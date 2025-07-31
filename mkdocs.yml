@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2025 <github.com/dpaletti/orti> contributors
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+site_name: orti documentation
+site_url: https://dpaletti.github.io/orti
+theme:
+  font:
+    text: Source Sans 3
+  name: material
+  palette:
+    - primary: light green
+    - accent: light blue
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css

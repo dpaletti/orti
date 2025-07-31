@@ -1,6 +1,12 @@
-%% SPDX-FileCopyrightText: 2025 <github.com/dpaletti/orti> contributors
-%% SPDX-License-Identifier: CERN-OHL-S-2.0
+<!--
+SPDX-FileCopyrightText: 2025 <github.com/dpaletti/orti> contributors
 
+SPDX-License-Identifier: CERN-OHL-S-2.0
+-->
+
+# Block diagram
+
+```mermaid
 graph TD
 BATTERY["2 x AAA BATTERY"]
 USB-C
@@ -12,7 +18,6 @@ subgraph OSCILLATOR
          STAGE_1["DIFFERENTIAL AMPLIFIER (1)"]
          STAGE_2["DIFFERENTIAL AMPLIFIER (2)"]
          STAGE_3["DIFFERENTIAL AMPLIFIER (3)"]
-
          STAGE_1 --> STAGE_2
          STAGE_2 --> STAGE_3
          STAGE_3 --> STAGE_1
@@ -35,3 +40,5 @@ BATTERY -->|powers| TEMPERATURE
 
 TEMPERATURE -->|signals| MICROCONTROLLER
 HUMIDITY -->|signals| MICROCONTROLLER
+
+```

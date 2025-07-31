@@ -15,3 +15,5 @@ jobs:
         run: mise run setup
       - uses: actions/setup-python@v3
       - uses: pre-commit/action@v3.0.1
+        env:
+          SKIP: reuse

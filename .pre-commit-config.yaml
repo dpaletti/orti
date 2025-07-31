@@ -6,11 +6,6 @@ default_install_hook_types:
   - pre-commit
   - commit-msg
 
-ci:
-  # reuse is in another ci job
-  # in CI we only check mermaid diagrams we do not create them
-  skip: [reuse, mermaid_compile]
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
@@ -26,14 +21,6 @@ repos:
         entry: mise run md_lint_format
         language: system
         pass_filenames: false
-
-      - id: mermaid_compile
-        name: mermaid_compile
-        description: compile .mmd file to .mmd.png files given config
-        entry: mise run compile_mermaid
-        language: system
-        files: \.mmd$
-        pass_filenames: true
 
       - id: dco_enforce
         name: dco_enforce

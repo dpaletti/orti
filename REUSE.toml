@@ -37,7 +37,7 @@ SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
 [[annotations]]
-path = "hardware/docs/resources/*"
+path = "docs/hardware/resources/*"
 precedence = "override"
 SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
 SPDX-License-Identifier = "CERN-OHL-S-2.0"
