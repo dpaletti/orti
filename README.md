@@ -42,7 +42,7 @@ use.
 
 Because existing products do not tick all the boxes.
 
-### High-Level Comparison
+### High-Level comparison
 
 | Product                            | Price (€)    | Accuracy | Technology                       | Power supply                            |
 | ---------------------------------- | ------------ | -------- | -------------------------------- | --------------------------------------- |
