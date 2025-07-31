@@ -37,9 +37,31 @@ SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
 [[annotations]]
-path = "docs/hardware/resources/*"
+path = "hardware/**.kicad*"
 precedence = "override"
 SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
 SPDX-License-Identifier = "CERN-OHL-S-2.0"
 
+[[annotations]]
+path = "docs/hardware/resources/*"
+precedence = "override"
+SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
 
+[[annotations]]
+path = "hardware/**.stp*"
+precedence = "override"
+SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
+SPDX-License-Identifier = "CERN-OHL-S-2.0"
+
+[[annotations]]
+path = "hardware/fp-lib-table"
+precedence = "override"
+SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
+SPDX-License-Identifier = "CERN-OHL-S-2.0"
+
+[[annotations]]
+path = "hardware/sym-lib-table"
+precedence = "override"
+SPDX-FileCopyrightText = "2025 <github.com/dpaletti/orti> contributors"
+SPDX-License-Identifier = "CERN-OHL-S-2.0"
