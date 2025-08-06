@@ -85,7 +85,8 @@ For a more detailed view of past, ongoing and future activities see the
 [kanban board](https://github.com/users/dpaletti/projects/2).
 
 ## How does this make sense?
-
+I don't know (yet).
+<!---
 A product is protected through innovation and branding, not obscurity. Lowering the
 barrier of entry for competitors is a low price to pay for a community that constantly
 regenerates the product through open collaboration.
@@ -121,7 +122,7 @@ regenerates the product through open collaboration.
 
 > Bootstrapping, make the business profitable as soon as possible and grow organically.
 > We are in for the long run.
-
+-->
 ## License
 
 Code, hardware and all other artifacts are licensed as open and copyleft.
